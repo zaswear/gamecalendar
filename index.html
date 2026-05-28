@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Próximos lanzamientos de videojuegos — actualizado cada día">
+  <title>GameCalendar · lanzamientos</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0f14'/><circle cx='16' cy='16' r='10' stroke='%237c6af7' stroke-width='2' fill='none'/><circle cx='16' cy='16' r='3' fill='%237c6af7'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #0e0f14;
+      --bg-card:     #161820;
+      --bg-modal:    #1c1e28;
+      --border:      rgba(255,255,255,0.07);
+      --border-hover:rgba(255,255,255,0.16);
+      --text:        #e2e4ef;
+      --text-mid:    #8a8d9e;
+      --text-faint:  #4a4d5e;
+      --accent:      #7c6af7;
+      --accent-dim:  rgba(124,106,247,0.15);
+      --gold:        #f0b429;
+      --gold-dim:    rgba(240,180,41,0.15);
+      --green:       #3ecf8e;
+      --green-dim:   rgba(62,207,142,0.12);
+      --red:         #f86868;
+      --radius:      10px;
+      --radius-lg:   16px;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100dvh;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(14,15,20,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 56px;
+    }
+
+    .brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .brand em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+    }
+    .filter-bar::-webkit-scrollbar { display:none; }
+
+    .pill {
+      flex-shrink: 0;
+      padding: 5px 12px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-mid);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .pill:hover { border-color: var(--border-hover); color: var(--text); }
+    .pill.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .updated-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--text-faint);
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: none;
+    }
+    .updated-tag.visible { display: block; }
+
+    /* ── MAIN LAYOUT ── */
+    .main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 48px; }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .month-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .month-block { margin-bottom: 36px; }
+
+    /* ── GAME ROW (scroll horizontal) ── */
+    .game-row {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .game-row::-webkit-scrollbar { height: 4px; }
+    .game-row::-webkit-scrollbar-track { background: transparent; }
+    .game-row::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    /* ── GAME CARD ── */
+    .card {
+      flex-shrink: 0;
+      width: 160px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+
+    .card-cover {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      background: var(--bg);
+    }
+    .card-cover-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #1a1c28, #12141c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .card-score {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+    .card-score.good  { background: rgba(62,207,142,0.85); color: #0a2016; }
+    .card-score.ok    { background: rgba(240,180,41,0.85); color: #1a1000; }
+    .card-score.bad   { background: rgba(248,104,104,0.85); color: #1a0000; }
+
+    .card-body {
+      padding: 10px 11px 11px;
+    }
+    .card-name {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .card-platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .plat-chip {
+      font-size: 9px;
+      font-weight: 500;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text-mid);
+      white-space: nowrap;
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 80px 24px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .empty-state .icon { font-size: 48px; margin-bottom: 20px; }
+    .empty-state h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .empty-state p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+    .empty-state code {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    /* ── MODAL ── */
+    #modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    #modal-backdrop.show { opacity: 1; pointer-events: auto; }
+
+    #modal {
+      position: fixed;
+      inset: 0;
+      z-index: 101;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      pointer-events: none;
+      padding: 0 0 0 0;
+    }
+
+    #modal-box {
+      width: 100%;
+      max-width: 600px;
+      max-height: 90dvh;
+      background: var(--bg-modal);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(.22,1,.36,1);
+      pointer-events: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    #modal-box.show { transform: translateY(0); }
+
+    .modal-drag {
+      width: 36px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+
+    .modal-cover-wrap {
+      position: relative;
+    }
+    .modal-cover {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .modal-cover-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #1a1c28, #0e0f14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+    .modal-cover-gradient {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, var(--bg-modal));
+    }
+
+    .modal-body {
+      padding: 0 24px 32px;
+    }
+
+    .modal-meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .modal-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    .modal-score-big {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .modal-score-big.good  { background: var(--green-dim); color: var(--green); }
+    .modal-score-big.ok    { background: var(--gold-dim);  color: var(--gold); }
+    .modal-score-big.bad   { background: rgba(248,104,104,0.12); color: var(--red); }
+
+    .modal-info-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .modal-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .modal-info-label {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-family: 'Space Mono', monospace;
+    }
+    .modal-info-val {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .modal-platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .modal-plat {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.07);
+      color: var(--text-mid);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .modal-summary {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+
+    .modal-trailer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .modal-trailer-btn:hover { background: rgba(124,106,247,0.25); }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    /* ── GENRE CHIPS ── */
+    .modal-genres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .genre-chip {
+      padding: 3px 9px;
+      border-radius: 5px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    /* ── NO GAMES IN MONTH ── */
+    .no-data {
+      color: var(--text-faint);
+      font-size: 13px;
+      padding: 8px 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .main { padding: 24px 16px 48px; }
+      .updated-tag { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">GAME<em>CALENDAR</em></div>
+  <div class="filter-bar" id="filter-bar">
+    <button class="pill active" data-plat="all">Todos</button>
+    <button class="pill" data-plat="PC">PC</button>
+    <button class="pill" data-plat="PS5">PS5</button>
+    <button class="pill" data-plat="Xbox Series X|S">Xbox</button>
+    <button class="pill" data-plat="Switch">Switch</button>
+    <button class="pill" data-plat="PS4">PS4</button>
+    <button class="pill" data-plat="iOS">iOS</button>
+    <button class="pill" data-plat="Android">Android</button>
+  </div>
+  <span class="updated-tag" id="updated-tag"></span>
+</header>
+
+<main class="main" id="main"></main>
+
+<!-- Modal -->
+<div id="modal-backdrop"></div>
+<div id="modal">
+  <div id="modal-box">
+    <div class="modal-drag"></div>
+    <div class="modal-cover-wrap" id="modal-cover-wrap"></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const MONTHS_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                   'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+let allGames  = { upcoming: [], recent: [] };
+let activePlat = 'all';
+
+/* ── DATE HELPERS ── */
+function formatDate(ts) {
+  if (!ts) return 'Sin fecha';
+  const d = new Date(ts * 1000);
+  return `${d.getUTCDate()} ${MONTHS_ES[d.getUTCMonth()].toLowerCase()} ${d.getUTCFullYear()}`;
+}
+function monthKey(ts) {
+  const d = new Date(ts * 1000);
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth()).padStart(2,'0')}`;
+}
+function monthLabel(key) {
+  const [y, m] = key.split('-');
+  return `${MONTHS_ES[parseInt(m)]} ${y}`;
+}
+function timeAgo(iso) {
+  if (!iso) return null;
+  const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (diff < 3600)  return `hace ${Math.round(diff/60)} min`;
+  if (diff < 86400) return `hace ${Math.round(diff/3600)} h`;
+  return `hace ${Math.round(diff/86400)} d`;
+}
+
+/* ── FILTER ── */
+function matchPlatform(game) {
+  if (activePlat === 'all') return true;
+  return game.platforms.some(p => p === activePlat);
+}
+function filtered(list) {
+  return list.filter(matchPlatform);
+}
+
+/* ── SCORE CLASS ── */
+function scoreClass(s) {
+  if (!s) return '';
+  if (s >= 75) return 'good';
+  if (s >= 55) return 'ok';
+  return 'bad';
+}
+
+/* ── CARD HTML ── */
+function cardHTML(g) {
+  const coverHTML = g.cover
+    ? `<img class="card-cover" src="${g.cover}" alt="${escHtml(g.name)}" loading="lazy">`
+    : `<div class="card-cover-placeholder">🎮</div>`;
+
+  const scoreHTML = g.score
+    ? `<div class="card-score ${scoreClass(g.score)}">${g.score}</div>`
+    : '';
+
+  const plats = g.platforms.slice(0, 3).map(p =>
+    `<span class="plat-chip">${platShort(p)}</span>`
+  ).join('');
+
+  return `
+<div class="card" data-id="${g.id}">
+  ${coverHTML}
+  ${scoreHTML}
+  <div class="card-body">
+    <div class="card-name">${escHtml(g.name)}</div>
+    <div class="card-date">${formatDate(g.release_date)}</div>
+    <div class="card-platforms">${plats}</div>
+  </div>
+</div>`;
+}
+
+function platShort(p) {
+  const map = { 'PlayStation 4':'PS4', 'PlayStation 5':'PS5',
+                'Xbox Series X|S':'XSX', 'Xbox One':'XBO',
+                'Nintendo Switch':'NSW', 'PC (Microsoft Windows)':'PC' };
+  return map[p] || p;
+}
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── RENDER ── */
+function render() {
+  const main = document.getElementById('main');
+
+  const rec = filtered(allGames.recent);
+  const upc = filtered(allGames.upcoming);
+
+  if (!rec.length && !upc.length && !allGames.upcoming.length && !allGames.recent.length) {
+    main.innerHTML = emptyStateHTML();
+    return;
+  }
+
+  let html = '';
+
+  // Recent
+  if (rec.length) {
+    html += `
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Recién lanzados</h2>
+    <span class="section-badge">últimos 30 días</span>
+  </div>
+  <div class="game-row">${rec.map(cardHTML).join('')}</div>
+</section>`;
+  }
+
+  // Upcoming by month
+  if (upc.length) {
+    const byMonth = {};
+    for (const g of upc) {
+      const k = monthKey(g.release_date);
+      if (!byMonth[k]) byMonth[k] = [];
+      byMonth[k].push(g);
+    }
+
+    html += `<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Próximos lanzamientos</h2>
+    <span class="section-badge">${upc.length} juegos</span>
+  </div>`;
+
+    for (const [key, games] of Object.entries(byMonth).sort()) {
+      html += `
+<div class="month-block">
+  <div class="month-label">${monthLabel(key)}</div>
+  <div class="game-row">${games.map(cardHTML).join('')}</div>
+</div>`;
+    }
+    html += `</section>`;
+  }
+
+  if (!html) {
+    html = `<p class="no-data" style="text-align:center;padding:48px">Sin juegos para el filtro seleccionado.</p>`;
+  }
+
+  main.innerHTML = html;
+  attachCardListeners();
+}
+
+function emptyStateHTML() {
+  return `
+<div class="empty-state">
+  <div class="icon">📡</div>
+  <h2>Sin datos todavía</h2>
+  <p>El archivo <code>releases.json</code> está vacío. Configura las credenciales de IGDB y ejecuta el script para poblar la base de datos.</p>
+  <code>
+# 1. Consigue credenciales en dev.twitch.tv<br>
+# 2. Añádelas como Secrets en GitHub:<br>
+#    TWITCH_CLIENT_ID<br>
+#    TWITCH_CLIENT_SECRET<br>
+# 3. Ejecuta el workflow o:<br>
+export TWITCH_CLIENT_ID=xxx<br>
+export TWITCH_CLIENT_SECRET=xxx<br>
+python fetch_releases.py
+  </code>
+</div>`;
+}
+
+/* ── CARDS → MODAL ── */
+function attachCardListeners() {
+  document.querySelectorAll('.card').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = parseInt(el.dataset.id);
+      const g = [...allGames.upcoming, ...allGames.recent].find(x => x.id === id);
+      if (g) openModal(g);
+    });
+  });
+}
+
+/* ── MODAL ── */
+const backdrop = document.getElementById('modal-backdrop');
+const modalBox = document.getElementById('modal-box');
+
+function openModal(g) {
+  const coverWrap = document.getElementById('modal-cover-wrap');
+  const body      = document.getElementById('modal-body');
+
+  if (g.cover) {
+    coverWrap.innerHTML = `
+<img class="modal-cover" src="${g.cover}" alt="${escHtml(g.name)}" loading="eager">
+<div class="modal-cover-gradient"></div>
+<button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>`;
+  } else {
+    coverWrap.innerHTML = `
+<div class="modal-cover-placeholder">🎮</div>
+<div class="modal-cover-gradient"></div>
+<button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>`;
+  }
+
+  const scoreHTML = g.score
+    ? `<div class="modal-score-big ${scoreClass(g.score)}">${g.score}</div>`
+    : '';
+
+  const genres = (g.genres || []).map(x => `<span class="genre-chip">${escHtml(x)}</span>`).join('');
+  const plats  = (g.platforms || []).map(x => `<span class="modal-plat">${escHtml(x)}</span>`).join('');
+
+  const infoItems = [];
+  if (g.release_date) infoItems.push({ label:'Lanzamiento', val: formatDate(g.release_date) });
+  if (g.developer)    infoItems.push({ label:'Desarrollador', val: g.developer });
+  if (g.hypes > 0)    infoItems.push({ label:'Hypes', val: `${g.hypes.toLocaleString('es')} ♥` });
+
+  const infoHTML = infoItems.map(i => `
+<div class="modal-info-item">
+  <span class="modal-info-label">${i.label}</span>
+  <span class="modal-info-val">${escHtml(i.val)}</span>
+</div>`).join('');
+
+  const trailerHTML = g.trailer
+    ? `<a class="modal-trailer-btn" href="https://www.youtube.com/watch?v=${g.trailer}" target="_blank" rel="noopener">
+        ▶ Ver tráiler en YouTube
+       </a>`
+    : '';
+
+  body.innerHTML = `
+<div class="modal-meta">
+  <h2 class="modal-title">${escHtml(g.name)}</h2>
+  ${scoreHTML}
+</div>
+<div class="modal-info-row">${infoHTML}</div>
+${genres ? `<div class="modal-genres">${genres}</div>` : ''}
+${plats  ? `<div class="modal-platforms">${plats}</div>` : ''}
+${g.summary ? `<p class="modal-summary">${escHtml(g.summary)}</p>` : ''}
+${trailerHTML}`;
+
+  backdrop.classList.add('show');
+  modalBox.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  modalBox.scrollTop = 0;
+
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+}
+
+function closeModal() {
+  backdrop.classList.remove('show');
+  modalBox.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+backdrop.addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ── FILTER PILLS ── */
+document.getElementById('filter-bar').addEventListener('click', e => {
+  const pill = e.target.closest('.pill');
+  if (!pill) return;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+  activePlat = pill.dataset.plat;
+  render();
+});
+
+/* ── LOAD DATA ── */
+async function loadData() {
+  try {
+    const r = await fetch('./releases.json');
+    if (!r.ok) throw new Error('fetch failed');
+    allGames = await r.json();
+
+    const tag = document.getElementById('updated-tag');
+    const ago = timeAgo(allGames.updated_at);
+    if (ago) {
+      tag.textContent = `↻ ${ago}`;
+      tag.classList.add('visible');
+    }
+  } catch (e) {
+    console.warn('No se pudo cargar releases.json', e);
+  }
+  render();
+}
+
+loadData();
+</script>
+</body>
+</html>

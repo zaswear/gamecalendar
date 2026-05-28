@@ -1,0 +1,36 @@
+name: Actualizar lanzamientos
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # cada día a las 7:00 UTC
+  workflow_dispatch:       # también se puede lanzar a mano desde GitHub
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Obtener lanzamientos de IGDB
+        env:
+          TWITCH_CLIENT_ID:     ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        run: python fetch_releases.py
+
+      - name: Commit si hay cambios
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add releases.json
+          git diff --cached --quiet || git commit -m "data: actualizar lanzamientos $(date -u +%Y-%m-%d)"
+          git push
