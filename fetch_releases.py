@@ -33,29 +33,20 @@ PLATFORMS = {
 }
 PLATFORM_IDS = ",".join(str(p) for p in PLATFORMS)
 
-# ── Thresholds de calidad ────────────────────────────────────────────────────
-# Juegos próximos: mínimo hypes en IGDB para aparecer (filtra shovelware sin audiencia)
-MIN_HYPES_UPCOMING = 3
-# Juegos recientes: mínimo de votos/reviews en IGDB para aparecer
-MIN_RATING_COUNT_RECENT = 5
-# Si el juego solo aparece en PC y tiene 0 hypes → probablemente shovelware
-PC_ONLY_MIN_HYPES = 5
-
-# ── IGDB theme IDs a excluir ─────────────────────────────────────────────────
-# 42 = Erotic / Adult, también filtramos otros themes problemáticos si los hay
-EXCLUDED_THEMES = [42]
+# ── IGDB theme IDs a excluir (comprobados en Python, no en query) ────────────
+# 42 = Erotic/Adult
+EXCLUDED_THEMES = {42}
 
 FIELDS = """
 fields name, cover.url, first_release_date,
        platforms.id, platforms.name,
        genres.name, themes.id,
        involved_companies.company.name,
-       involved_companies.company.published,
        involved_companies.developer,
        involved_companies.publisher,
        total_rating, total_rating_count,
        summary, videos.video_id,
-       hypes, follows;
+       follows;
 """
 
 # ── Blocklist ────────────────────────────────────────────────────────────────
@@ -135,24 +126,32 @@ def process(g):
         "release_date": g.get("first_release_date"),
         "platforms":    platforms,
         "genres":       genres,
+        "themes":       [t["id"] for t in g.get("themes", [])],
         "developer":    developer,
         "publisher":    publisher,
         "score":        score,
         "summary":      summary,
         "trailer":      trailer,
-        "hypes":        g.get("hypes", 0) or 0,
         "follows":      g.get("follows", 0) or 0,
     }
 
 
-def is_quality(game, blocked_devs, blocked_pubs, mode="upcoming"):
+def is_quality(game, blocked_devs, blocked_pubs):
     """Devuelve True si el juego pasa todos los filtros de calidad."""
 
-    # Sin portada → probablemente sin datos reales
+    # Sin portada → sin datos reales en IGDB
     if not game["cover"]:
         return False
 
-    # Comprueba blocklist (AI covers, publishers problemáticos)
+    # Contenido NSFW (verificado en Python, no en query)
+    if any(t in EXCLUDED_THEMES for t in game.get("themes", [])):
+        return False
+
+    # Sin plataformas reconocidas (quedó fuera de nuestros filtros)
+    if not game["platforms"]:
+        return False
+
+    # Blocklist manual (AI covers, publishers problemáticos)
     dev = (game["developer"] or "").lower().strip()
     pub = (game["publisher"] or "").lower().strip()
     if dev and dev in blocked_devs:
@@ -160,36 +159,16 @@ def is_quality(game, blocked_devs, blocked_pubs, mode="upcoming"):
     if pub and pub in blocked_pubs:
         return False
 
-    hypes = game["hypes"]
-
-    if mode == "upcoming":
-        # Si solo está en PC y tiene muy pocos hypes → shovelware probable
-        if game["platforms"] == ["PC"] and hypes < PC_ONLY_MIN_HYPES:
-            return False
-        # Cualquier juego en consola pasa (hay menos shovelware de consola)
-        # Juego multi-plataforma → pasa siempre
-        if len(game["platforms"]) > 1:
-            return True
-        # Juego de una sola plataforma → necesita mínimo de hypes
-        return hypes >= MIN_HYPES_UPCOMING
-
-    else:  # recent
-        # Para recientes, filtramos los sin ningún score ni seguimiento
-        rating_count = 0  # no lo guardamos en process(), usamos hypes como proxy
-        return hypes >= 1 or (game["score"] is not None)
+    return True
 
 
 def fetch_upcoming(token):
     now = int(time.time())
-    excluded = ",".join(str(t) for t in EXCLUDED_THEMES)
     body = f"""
 {FIELDS}
 where first_release_date >= {now}
   & first_release_date <= {now + 120 * 86400}
   & category = 0
-  & version_parent = null
-  & cover != null
-  & themes != ({excluded})
   & platforms = ({PLATFORM_IDS});
 sort first_release_date asc;
 limit 200;
@@ -199,15 +178,11 @@ limit 200;
 
 def fetch_recent(token):
     now = int(time.time())
-    excluded = ",".join(str(t) for t in EXCLUDED_THEMES)
     body = f"""
 {FIELDS}
 where first_release_date >= {now - 30 * 86400}
   & first_release_date < {now}
   & category = 0
-  & version_parent = null
-  & cover != null
-  & themes != ({excluded})
   & platforms = ({PLATFORM_IDS});
 sort first_release_date desc;
 limit 100;
@@ -226,13 +201,13 @@ def main():
     print("→ Fetching próximos lanzamientos…")
     raw_upcoming = fetch_upcoming(token)
     upcoming = [process(g) for g in raw_upcoming if g.get("first_release_date")]
-    upcoming = [g for g in upcoming if is_quality(g, blocked_devs, blocked_pubs, "upcoming")]
+    upcoming = [g for g in upcoming if is_quality(g, blocked_devs, blocked_pubs)]
     upcoming.sort(key=lambda g: g["release_date"])
 
     print("→ Fetching lanzamientos recientes…")
     raw_recent = fetch_recent(token)
     recent = [process(g) for g in raw_recent if g.get("first_release_date")]
-    recent = [g for g in recent if is_quality(g, blocked_devs, blocked_pubs, "recent")]
+    recent = [g for g in recent if is_quality(g, blocked_devs, blocked_pubs)]
 
     # Estadísticas de filtrado
     filtered_up  = len(raw_upcoming) - len(upcoming)

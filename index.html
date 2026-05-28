@@ -739,7 +739,7 @@ function openModal(g) {
   const infoItems = [];
   if (g.release_date) infoItems.push({ label:'Lanzamiento', val: formatDate(g.release_date) });
   if (g.developer)    infoItems.push({ label:'Desarrollador', val: g.developer });
-  if (g.hypes > 0)    infoItems.push({ label:'Hypes', val: `${g.hypes.toLocaleString('es')} ♥` });
+  if (g.follows > 0)  infoItems.push({ label:'Seguidores', val: `${g.follows.toLocaleString('es')} ♥` });
 
   const infoHTML = infoItems.map(i => `
 <div class="modal-info-item">
