@@ -10,502 +10,337 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:          #0e0f14;
-      --bg-card:     #161820;
-      --bg-modal:    #1c1e28;
-      --border:      rgba(255,255,255,0.07);
-      --border-hover:rgba(255,255,255,0.16);
-      --text:        #e2e4ef;
-      --text-mid:    #8a8d9e;
-      --text-faint:  #4a4d5e;
-      --accent:      #7c6af7;
-      --accent-dim:  rgba(124,106,247,0.15);
-      --gold:        #f0b429;
-      --gold-dim:    rgba(240,180,41,0.15);
-      --green:       #3ecf8e;
-      --green-dim:   rgba(62,207,142,0.12);
-      --red:         #f86868;
-      --radius:      10px;
-      --radius-lg:   16px;
+      --bg:           #0e0f14;
+      --bg-card:      #161820;
+      --bg-modal:     #1c1e28;
+      --bg-elevated:  #1e2030;
+      --border:       rgba(255,255,255,0.07);
+      --border-hi:    rgba(255,255,255,0.16);
+      --text:         #e2e4ef;
+      --text-mid:     #8a8d9e;
+      --text-faint:   #4a4d5e;
+      --accent:       #7c6af7;
+      --accent-dim:   rgba(124,106,247,0.15);
+      --gold:         #f0b429;
+      --gold-dim:     rgba(240,180,41,0.14);
+      --green:        #3ecf8e;
+      --green-dim:    rgba(62,207,142,0.12);
+      --red:          #f86868;
+      --warm:         #f07830;
+      --warm-dim:     rgba(240,120,48,0.14);
+      --pink:         #e8608a;
+      --radius:       10px;
+      --radius-lg:    16px;
     }
-
-    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      min-height: 100dvh;
-      overflow-x: hidden;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100dvh;overflow-x:hidden}
 
     /* ── HEADER ── */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(14,15,20,0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      height: 56px;
+    .site-header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(14,15,20,.92);
+      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border);
+      padding:0 20px;
+      display:flex;align-items:center;gap:12px;height:54px;
     }
+    .brand{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;flex-shrink:0}
+    .brand em{font-style:normal;color:var(--accent)}
+    .search-wrap{flex:1;max-width:280px}
+    .search-wrap input{
+      width:100%;background:var(--bg-card);border:1px solid var(--border);
+      border-radius:8px;padding:7px 12px;font-family:'Inter',sans-serif;
+      font-size:13px;color:var(--text);outline:none;
+      transition:border-color .15s;
+    }
+    .search-wrap input:focus{border-color:var(--accent)}
+    .search-wrap input::placeholder{color:var(--text-faint)}
+    .header-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+    .hdr-btn{
+      display:flex;align-items:center;gap:5px;
+      padding:5px 10px;border-radius:8px;
+      border:1px solid var(--border);background:transparent;
+      color:var(--text-mid);font-size:12px;font-weight:500;cursor:pointer;
+      font-family:'Inter',sans-serif;transition:border-color .15s,color .15s;
+      white-space:nowrap;
+    }
+    .hdr-btn:hover{border-color:var(--border-hi);color:var(--text)}
+    .hdr-btn.active{border-color:var(--accent);color:var(--accent)}
+    #wishlist-btn.has-items{color:var(--pink);border-color:var(--pink)}
+    .updated-tag{font-family:'Space Mono',monospace;font-size:10px;color:var(--text-faint);white-space:nowrap;flex-shrink:0}
 
-    .brand {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      white-space: nowrap;
-      flex-shrink: 0;
+    /* ── FILTERS ── */
+    .filters-wrap{
+      position:sticky;top:54px;z-index:40;
+      background:rgba(14,15,20,.88);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      padding:8px 20px 6px;
+      display:flex;flex-direction:column;gap:6px;
     }
-    .brand em {
-      font-style: normal;
-      color: var(--accent);
+    .filter-row{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
+    .filter-row::-webkit-scrollbar{display:none}
+    .filter-controls{display:flex;align-items:center;gap:12px;padding-top:2px}
+    .pill{
+      flex-shrink:0;padding:4px 11px;border-radius:99px;
+      border:1px solid var(--border);background:transparent;
+      color:var(--text-mid);font-family:'Inter',sans-serif;
+      font-size:11px;font-weight:500;cursor:pointer;
+      transition:background .15s,border-color .15s,color .15s;white-space:nowrap;
     }
+    .pill:hover{border-color:var(--border-hi);color:var(--text)}
+    .pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    .genre-pill.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
+    .sort-select{
+      background:transparent;border:1px solid var(--border);border-radius:7px;
+      color:var(--text-mid);font-family:'Inter',sans-serif;font-size:11px;
+      padding:4px 8px;cursor:pointer;outline:none;
+    }
+    .sort-select option{background:var(--bg-modal)}
+    .quality-toggle{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none}
+    .quality-toggle input{accent-color:var(--accent);width:14px;height:14px;cursor:pointer}
+    .quality-toggle span{font-size:11px;color:var(--text-mid)}
 
-    .filter-bar {
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      flex: 1;
+    /* ── HERO ── */
+    .hero{
+      position:relative;overflow:hidden;
+      min-height:280px;display:flex;align-items:flex-end;
+      margin-bottom:0;
     }
-    .filter-bar::-webkit-scrollbar { display:none; }
+    .hero-bg{
+      position:absolute;inset:-20px;
+      background-size:cover;background-position:center;
+      filter:blur(28px) brightness(.35) saturate(1.4);
+      transform:scale(1.1);
+    }
+    .hero-gradient{
+      position:absolute;inset:0;
+      background:linear-gradient(to right,rgba(14,15,20,.95) 40%,rgba(14,15,20,.5) 100%),
+                 linear-gradient(to top,rgba(14,15,20,1) 0%,transparent 40%);
+    }
+    .hero-content{
+      position:relative;z-index:2;
+      display:flex;align-items:flex-end;gap:28px;
+      padding:28px 28px 32px;width:100%;max-width:900px;
+    }
+    .hero-poster{
+      flex-shrink:0;width:110px;border-radius:10px;
+      box-shadow:0 20px 60px rgba(0,0,0,.7);
+      object-fit:cover;aspect-ratio:3/4;
+    }
+    .hero-poster-placeholder{
+      flex-shrink:0;width:110px;aspect-ratio:3/4;
+      background:var(--bg-card);border-radius:10px;
+      display:flex;align-items:center;justify-content:center;font-size:36px;
+    }
+    .hero-info{flex:1;min-width:0}
+    .hero-label{
+      font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:8px;
+    }
+    .hero-title{
+      font-family:'Syne',sans-serif;font-size:clamp(22px,5vw,36px);
+      font-weight:800;line-height:1.1;margin-bottom:8px;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    }
+    .hero-dev{font-size:13px;color:var(--text-mid);margin-bottom:10px}
+    .hero-plats{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+    .hero-plat{
+      padding:3px 8px;border-radius:5px;
+      background:rgba(255,255,255,.08);color:var(--text-mid);font-size:10px;font-weight:500;
+    }
+    .hero-countdown{
+      display:inline-flex;align-items:center;gap:7px;
+      background:var(--warm-dim);border:1px solid var(--warm);
+      border-radius:8px;padding:6px 12px;margin-bottom:14px;
+    }
+    .hero-countdown-num{
+      font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--warm);
+    }
+    .hero-countdown-label{font-size:11px;color:var(--text-mid)}
+    .hero-countdown.today{background:var(--green-dim);border-color:var(--green)}
+    .hero-countdown.today .hero-countdown-num{color:var(--green)}
+    .hero-actions{display:flex;gap:8px}
+    .hero-wish-btn{
+      display:flex;align-items:center;gap:6px;
+      padding:8px 16px;border-radius:9px;border:1px solid var(--border);
+      background:rgba(255,255,255,.06);color:var(--text);
+      font-family:'Inter',sans-serif;font-size:13px;font-weight:500;cursor:pointer;
+      transition:background .15s,border-color .15s;
+    }
+    .hero-wish-btn:hover{background:rgba(255,255,255,.1);border-color:var(--border-hi)}
+    .hero-wish-btn.wishlisted{background:rgba(232,96,138,.12);border-color:var(--pink);color:var(--pink)}
 
-    .pill {
-      flex-shrink: 0;
-      padding: 5px 12px;
-      border-radius: 99px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-mid);
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-      white-space: nowrap;
-    }
-    .pill:hover { border-color: var(--border-hover); color: var(--text); }
-    .pill.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .updated-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: var(--text-faint);
-      white-space: nowrap;
-      flex-shrink: 0;
-      display: none;
-    }
-    .updated-tag.visible { display: block; }
-
-    /* ── MAIN LAYOUT ── */
-    .main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 32px 24px 64px;
-    }
+    /* ── MAIN ── */
+    .main{max-width:1400px;margin:0 auto;padding:28px 20px 64px}
 
     /* ── SECTION ── */
-    .section { margin-bottom: 48px; }
-
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 16px;
+    .section{margin-bottom:44px}
+    .section-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+    .section-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
+    .section-badge{font-family:'Space Mono',monospace;font-size:10px;color:var(--text-faint);letter-spacing:.06em;text-transform:uppercase}
+    .month-block{margin-bottom:32px}
+    .month-label{
+      font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+      letter-spacing:.07em;text-transform:uppercase;color:var(--text-faint);
+      margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid var(--border);
     }
 
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-    }
+    /* ── GAME ROW (grid scroll) ── */
+    .game-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+    .game-row::-webkit-scrollbar{height:3px}
+    .game-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 
-    .section-badge {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: var(--text-faint);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    /* ── CARD (grid) ── */
+    .card{
+      flex-shrink:0;width:150px;background:var(--bg-card);
+      border:1px solid var(--border);border-radius:var(--radius-lg);
+      overflow:hidden;cursor:pointer;position:relative;
+      transition:transform .2s ease,border-color .2s,box-shadow .2s;
     }
+    .card:hover{transform:translateY(-4px);border-color:var(--border-hi);box-shadow:0 12px 32px rgba(0,0,0,.5)}
+    .card-cover{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--bg)}
+    .card-cover-ph{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1a1c28,#12141c);display:flex;align-items:center;justify-content:center;font-size:28px}
+    .card-score{
+      position:absolute;top:7px;right:7px;
+      width:28px;height:28px;border-radius:6px;
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Syne',sans-serif;font-size:11px;font-weight:800;
+      backdrop-filter:blur(8px);
+    }
+    .score-good{background:rgba(62,207,142,.85);color:#0a2016}
+    .score-ok{background:rgba(240,180,41,.85);color:#1a1000}
+    .score-bad{background:rgba(248,104,104,.85);color:#1a0000}
+    .card-wish{
+      position:absolute;top:7px;left:7px;
+      width:26px;height:26px;border-radius:6px;
+      background:rgba(0,0,0,.5);backdrop-filter:blur(8px);
+      border:none;color:rgba(255,255,255,.5);font-size:13px;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:color .15s,background .15s;
+    }
+    .card-wish:hover{color:var(--pink);background:rgba(232,96,138,.2)}
+    .card-wish.on{color:var(--pink);background:rgba(232,96,138,.2)}
+    .card-countdown{
+      position:absolute;bottom:70px;left:0;right:0;
+      text-align:center;
+      font-family:'Space Mono',monospace;font-size:9px;font-weight:700;
+      padding:3px 0;
+    }
+    .countdown-today{background:rgba(62,207,142,.85);color:#0a2016}
+    .countdown-week{background:rgba(240,120,48,.85);color:#fff}
+    .countdown-soon{background:rgba(124,106,247,.7);color:#fff}
+    .card-body{padding:9px 10px 10px}
+    .card-name{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .card-date{font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);margin-bottom:5px}
+    .card-plats{display:flex;flex-wrap:wrap;gap:3px}
+    .plat-chip{font-size:8px;font-weight:500;padding:2px 4px;border-radius:3px;background:rgba(255,255,255,.06);color:var(--text-mid);white-space:nowrap}
 
-    .month-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-    }
+    /* ── LIST VIEW ── */
+    body.list-mode .game-row{flex-direction:column;overflow-x:visible}
+    body.list-mode .card{width:100%;flex-direction:row;height:64px;border-radius:10px}
+    body.list-mode .card:hover{transform:none;background:var(--bg-elevated)}
+    body.list-mode .card-cover{width:43px;height:64px;aspect-ratio:unset;flex-shrink:0;border-radius:0}
+    body.list-mode .card-cover-ph{width:43px;height:64px;aspect-ratio:unset;flex-shrink:0;font-size:18px;border-radius:0}
+    body.list-mode .card-score{top:50%;right:46px;transform:translateY(-50%)}
+    body.list-mode .card-wish{top:50%;left:auto;right:12px;transform:translateY(-50%)}
+    body.list-mode .card-countdown{position:static;background:none!important;font-size:9px;color:var(--text-faint)}
+    body.list-mode .countdown-today{color:var(--green)!important}
+    body.list-mode .countdown-week{color:var(--warm)!important}
+    body.list-mode .countdown-soon{color:var(--accent)!important}
+    body.list-mode .card-body{flex:1;display:flex;align-items:center;gap:12px;padding:0 56px 0 12px;overflow:hidden}
+    body.list-mode .card-name{flex:1;-webkit-line-clamp:1;margin:0}
+    body.list-mode .card-date{margin:0;white-space:nowrap}
+    body.list-mode .card-plats{flex-wrap:nowrap;gap:3px}
 
-    .month-block { margin-bottom: 36px; }
-
-    /* ── GAME ROW (scroll horizontal) ── */
-    .game-row {
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      padding-bottom: 8px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--border) transparent;
-    }
-    .game-row::-webkit-scrollbar { height: 4px; }
-    .game-row::-webkit-scrollbar-track { background: transparent; }
-    .game-row::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-    /* ── GAME CARD ── */
-    .card {
-      flex-shrink: 0;
-      width: 160px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s, box-shadow 0.2s;
-      position: relative;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-hover);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-    }
-
-    .card-cover {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-      background: var(--bg);
-    }
-    .card-cover-placeholder {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: linear-gradient(135deg, #1a1c28, #12141c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-    }
-
-    .card-score {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 30px;
-      height: 30px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      backdrop-filter: blur(8px);
-    }
-    .card-score.good  { background: rgba(62,207,142,0.85); color: #0a2016; }
-    .card-score.ok    { background: rgba(240,180,41,0.85); color: #1a1000; }
-    .card-score.bad   { background: rgba(248,104,104,0.85); color: #1a0000; }
-
-    .card-body {
-      padding: 10px 11px 11px;
-    }
-    .card-name {
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 1.35;
-      color: var(--text);
-      margin-bottom: 6px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .card-date {
-      font-family: 'Space Mono', monospace;
-      font-size: 10px;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-    .card-platforms {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .plat-chip {
-      font-size: 9px;
-      font-weight: 500;
-      padding: 2px 5px;
-      border-radius: 4px;
-      background: rgba(255,255,255,0.06);
-      color: var(--text-mid);
-      white-space: nowrap;
-    }
-
-    /* ── EMPTY STATE ── */
-    .empty-state {
-      text-align: center;
-      padding: 80px 24px;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .empty-state .icon { font-size: 48px; margin-bottom: 20px; }
-    .empty-state h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .empty-state p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-mid);
-      margin-bottom: 24px;
-    }
-    .empty-state code {
-      display: block;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      color: var(--green);
-      text-align: left;
-      line-height: 1.8;
+    /* ── EMPTY / NO DATA ── */
+    .empty{text-align:center;padding:60px 20px;max-width:440px;margin:0 auto}
+    .empty .icon{font-size:44px;margin-bottom:16px}
+    .empty h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:10px}
+    .empty p{font-size:13px;line-height:1.7;color:var(--text-mid);margin-bottom:20px}
+    .empty code{
+      display:block;background:var(--bg-card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:12px 16px;
+      font-family:'Space Mono',monospace;font-size:11px;color:var(--green);
+      text-align:left;line-height:1.8;
     }
 
     /* ── MODAL ── */
-    #modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      z-index: 100;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
+    #modal-backdrop{
+      position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:100;
+      opacity:0;pointer-events:none;transition:opacity .25s;
     }
-    #modal-backdrop.show { opacity: 1; pointer-events: auto; }
+    #modal-backdrop.show{opacity:1;pointer-events:auto}
+    #modal{
+      position:fixed;inset:0;z-index:101;
+      display:flex;align-items:flex-end;justify-content:center;
+      pointer-events:none;
+    }
+    #modal-box{
+      width:100%;max-width:600px;max-height:92dvh;
+      background:var(--bg-modal);border:1px solid var(--border);
+      border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+      overflow-y:auto;pointer-events:auto;
+      transform:translateY(100%);transition:transform .35s cubic-bezier(.22,1,.36,1);
+      scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+    }
+    #modal-box.show{transform:translateY(0)}
+    .modal-drag{width:36px;height:4px;background:var(--border);border-radius:2px;margin:12px auto 0}
+    .modal-media{position:relative;width:100%;background:#000}
+    .modal-trailer{width:100%;aspect-ratio:16/9;border:none;display:block}
+    .modal-cover-img{width:100%;height:200px;object-fit:cover;display:block}
+    .modal-cover-ph{width:100%;height:200px;background:linear-gradient(135deg,#1a1c28,#0e0f14);display:flex;align-items:center;justify-content:center;font-size:56px}
+    .modal-grad{position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,var(--bg-modal))}
+    .modal-close{
+      position:absolute;top:10px;right:12px;
+      width:30px;height:30px;border-radius:50%;
+      background:rgba(0,0,0,.5);border:none;
+      color:rgba(255,255,255,.7);font-size:15px;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);z-index:2;
+    }
+    .modal-body{padding:4px 22px 28px}
+    .modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .modal-title{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;line-height:1.2}
+    .modal-score-big{
+      flex-shrink:0;width:46px;height:46px;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Syne',sans-serif;font-size:17px;font-weight:800;
+    }
+    .modal-score-big.score-good{background:var(--green-dim);color:var(--green)}
+    .modal-score-big.score-ok{background:var(--gold-dim);color:var(--gold)}
+    .modal-score-big.score-bad{background:rgba(248,104,104,.12);color:var(--red)}
+    .modal-infos{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
+    .modal-info{display:flex;flex-direction:column;gap:2px}
+    .modal-info-lbl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);font-family:'Space Mono',monospace}
+    .modal-info-val{font-size:13px;font-weight:500}
+    .modal-countdown{
+      display:inline-flex;align-items:center;gap:6px;
+      background:var(--warm-dim);border:1px solid var(--warm);
+      border-radius:7px;padding:5px 11px;margin-bottom:12px;
+      font-size:12px;color:var(--warm);font-weight:600;
+    }
+    .modal-plats{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+    .modal-plat{padding:3px 9px;border-radius:5px;background:rgba(255,255,255,.07);color:var(--text-mid);font-size:11px;font-weight:500}
+    .modal-genres{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+    .modal-genre{padding:3px 9px;border-radius:5px;background:var(--accent-dim);color:var(--accent);font-size:11px;font-weight:500}
+    .modal-summary{font-size:13px;line-height:1.7;color:var(--text-mid);margin-bottom:18px}
+    .modal-wish-btn{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:9px 18px;border-radius:9px;border:1px solid var(--border);
+      background:rgba(255,255,255,.05);color:var(--text);
+      font-family:'Inter',sans-serif;font-size:13px;font-weight:500;cursor:pointer;
+      transition:background .15s,border-color .15s,color .15s;
+    }
+    .modal-wish-btn:hover{background:rgba(255,255,255,.09);border-color:var(--border-hi)}
+    .modal-wish-btn.wishlisted{background:rgba(232,96,138,.12);border-color:var(--pink);color:var(--pink)}
 
-    #modal {
-      position: fixed;
-      inset: 0;
-      z-index: 101;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      pointer-events: none;
-      padding: 0 0 0 0;
-    }
-
-    #modal-box {
-      width: 100%;
-      max-width: 600px;
-      max-height: 90dvh;
-      background: var(--bg-modal);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      overflow-y: auto;
-      transform: translateY(100%);
-      transition: transform 0.35s cubic-bezier(.22,1,.36,1);
-      pointer-events: auto;
-      scrollbar-width: thin;
-      scrollbar-color: var(--border) transparent;
-    }
-    #modal-box.show { transform: translateY(0); }
-
-    .modal-drag {
-      width: 36px;
-      height: 4px;
-      background: var(--border);
-      border-radius: 2px;
-      margin: 12px auto 0;
-    }
-
-    .modal-cover-wrap {
-      position: relative;
-    }
-    .modal-cover {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-    .modal-cover-placeholder {
-      width: 100%;
-      height: 220px;
-      background: linear-gradient(135deg, #1a1c28, #0e0f14);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-    }
-    .modal-cover-gradient {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 100px;
-      background: linear-gradient(to bottom, transparent, var(--bg-modal));
-    }
-
-    .modal-body {
-      padding: 0 24px 32px;
-    }
-
-    .modal-meta {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-    }
-    .modal-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      line-height: 1.2;
-      color: var(--text);
-    }
-    .modal-score-big {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-    }
-    .modal-score-big.good  { background: var(--green-dim); color: var(--green); }
-    .modal-score-big.ok    { background: var(--gold-dim);  color: var(--gold); }
-    .modal-score-big.bad   { background: rgba(248,104,104,0.12); color: var(--red); }
-
-    .modal-info-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-    .modal-info-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .modal-info-label {
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      font-family: 'Space Mono', monospace;
-    }
-    .modal-info-val {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .modal-platforms {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .modal-plat {
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.07);
-      color: var(--text-mid);
-      font-size: 11px;
-      font-weight: 500;
-    }
-
-    .modal-summary {
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--text-mid);
-      margin-bottom: 20px;
-    }
-
-    .modal-trailer-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: var(--radius);
-      background: var(--accent-dim);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-    .modal-trailer-btn:hover { background: rgba(124,106,247,0.25); }
-
-    .modal-close {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.4);
-      border: none;
-      color: rgba(255,255,255,0.7);
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(8px);
-      z-index: 2;
-    }
-
-    /* ── GENRE CHIPS ── */
-    .modal-genres {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .genre-chip {
-      padding: 3px 9px;
-      border-radius: 5px;
-      background: var(--accent-dim);
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 500;
-    }
-
-    /* ── NO GAMES IN MONTH ── */
-    .no-data {
-      color: var(--text-faint);
-      font-size: 13px;
-      padding: 8px 0;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .main { padding: 24px 16px 48px; }
-      .updated-tag { display: none !important; }
+    @media(max-width:600px){
+      .main{padding:20px 14px 48px}
+      .hero-content{padding:20px 16px 24px;gap:16px}
+      .hero-poster{width:80px}
+      .hero-title{font-size:20px}
+      .updated-tag{display:none}
+      .search-wrap{max-width:140px}
     }
   </style>
 </head>
@@ -513,301 +348,468 @@
 
 <header class="site-header">
   <div class="brand">GAME<em>CALENDAR</em></div>
-  <div class="filter-bar" id="filter-bar">
+  <div class="search-wrap">
+    <input type="search" id="search" placeholder="Buscar juego…" autocomplete="off">
+  </div>
+  <div class="header-right">
+    <button class="hdr-btn" id="wishlist-btn" title="Mi lista">♡ <span id="wishlist-count">0</span></button>
+    <button class="hdr-btn" id="view-btn" title="Cambiar vista">⊞ Grid</button>
+    <span class="updated-tag" id="updated-tag"></span>
+  </div>
+</header>
+
+<div class="filters-wrap">
+  <div class="filter-row" id="platform-bar">
     <button class="pill active" data-plat="all">Todos</button>
-    <button class="pill" data-plat="PC">PC</button>
     <button class="pill" data-plat="PS5">PS5</button>
     <button class="pill" data-plat="Xbox Series X|S">Xbox</button>
     <button class="pill" data-plat="Switch">Switch</button>
+    <button class="pill" data-plat="PC">PC</button>
     <button class="pill" data-plat="PS4">PS4</button>
-    <button class="pill" data-plat="iOS">iOS</button>
-    <button class="pill" data-plat="Android">Android</button>
+    <button class="pill" data-plat="Xbox One">Xbox One</button>
   </div>
-  <span class="updated-tag" id="updated-tag"></span>
-</header>
-
-<main class="main" id="main"></main>
-
-<!-- Modal -->
-<div id="modal-backdrop"></div>
-<div id="modal">
-  <div id="modal-box">
-    <div class="modal-drag"></div>
-    <div class="modal-cover-wrap" id="modal-cover-wrap"></div>
-    <div class="modal-body" id="modal-body"></div>
+  <div class="filter-row" id="genre-bar"></div>
+  <div class="filter-controls">
+    <select class="sort-select" id="sort-select">
+      <option value="date">Ordenar: fecha</option>
+      <option value="popular">Ordenar: popularidad</option>
+      <option value="score">Ordenar: puntuación</option>
+    </select>
+    <label class="quality-toggle">
+      <input type="checkbox" id="quality-toggle">
+      <span>Solo relevantes</span>
+    </label>
   </div>
 </div>
 
+<div id="hero-wrap"></div>
+<main class="main" id="main"></main>
+
+<div id="modal-backdrop"></div>
+<div id="modal"><div id="modal-box">
+  <div class="modal-drag"></div>
+  <div class="modal-media" id="modal-media"></div>
+  <div class="modal-body" id="modal-body"></div>
+</div></div>
+
 <script>
-const MONTHS_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
-                   'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const CONSOLE_PLATS = new Set(['PS5','PS4','Xbox Series X|S','Xbox One','Switch']);
 
-let allGames  = { upcoming: [], recent: [] };
-let activePlat = 'all';
+let DATA   = {upcoming:[], recent:[]};
+let WISH   = new Set(JSON.parse(localStorage.getItem('gcal-wish') || '[]'));
 
-/* ── DATE HELPERS ── */
-function formatDate(ts) {
-  if (!ts) return 'Sin fecha';
-  const d = new Date(ts * 1000);
-  return `${d.getUTCDate()} ${MONTHS_ES[d.getUTCMonth()].toLowerCase()} ${d.getUTCFullYear()}`;
+let activePlat  = 'all';
+let activeGenre = 'all';
+let sortBy      = 'date';
+let viewMode    = 'grid';
+let qualOnly    = false;
+let searchQ     = '';
+
+/* ── UTILS ── */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function daysUntil(ts){
+  const d = Math.ceil((ts * 1000 - Date.now()) / 86400000);
+  return d;
 }
-function monthKey(ts) {
+function countdownLabel(ts){
+  const d = daysUntil(ts);
+  if(d <= 0)  return {text:'Disponible', cls:'countdown-today'};
+  if(d === 1) return {text:'Mañana',     cls:'countdown-week'};
+  if(d <= 6)  return {text:`${d} días`,  cls:'countdown-week'};
+  if(d <= 30) return {text:`${d} días`,  cls:'countdown-soon'};
+  return null;
+}
+function fmtDate(ts){
+  if(!ts) return 'Sin fecha';
+  const d = new Date(ts * 1000);
+  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()].toLowerCase().slice(0,3)} ${d.getUTCFullYear()}`;
+}
+function monthKey(ts){
   const d = new Date(ts * 1000);
   return `${d.getUTCFullYear()}-${String(d.getUTCMonth()).padStart(2,'0')}`;
 }
-function monthLabel(key) {
-  const [y, m] = key.split('-');
-  return `${MONTHS_ES[parseInt(m)]} ${y}`;
+function monthLabel(k){
+  const[y,m] = k.split('-');
+  return `${MONTHS[parseInt(m)]} ${y}`;
 }
-function timeAgo(iso) {
-  if (!iso) return null;
-  const diff = (Date.now() - new Date(iso).getTime()) / 1000;
-  if (diff < 3600)  return `hace ${Math.round(diff/60)} min`;
-  if (diff < 86400) return `hace ${Math.round(diff/3600)} h`;
-  return `hace ${Math.round(diff/86400)} d`;
+function timeAgo(iso){
+  if(!iso) return null;
+  const s = (Date.now() - new Date(iso).getTime()) / 1000;
+  if(s < 3600)  return `↻ hace ${Math.round(s/60)} min`;
+  if(s < 86400) return `↻ hace ${Math.round(s/3600)} h`;
+  return `↻ hace ${Math.round(s/86400)} d`;
 }
-
-/* ── FILTER ── */
-function matchPlatform(game) {
-  if (activePlat === 'all') return true;
-  return game.platforms.some(p => p === activePlat);
-}
-function filtered(list) {
-  return list.filter(matchPlatform);
+function scoreClass(s){
+  if(!s) return '';
+  return s >= 75 ? 'score-good' : s >= 55 ? 'score-ok' : 'score-bad';
 }
 
-/* ── SCORE CLASS ── */
-function scoreClass(s) {
-  if (!s) return '';
-  if (s >= 75) return 'good';
-  if (s >= 55) return 'ok';
-  return 'bad';
+/* ── QUALITY ── */
+function qualityScore(g){
+  let s = (g.follows || 0) * 2;
+  const onConsole = g.platforms.some(p => CONSOLE_PLATS.has(p));
+  if(onConsole)            s += 120;
+  if(g.platforms.length >= 3) s += 40;
+  if(g.trailer)            s += 35;
+  if(g.summary && g.summary.length > 80) s += 15;
+  if(g.developer)          s += 10;
+  return s;
+}
+function isRelevant(g){ return qualityScore(g) >= 100; }
+
+/* ── FILTERS ── */
+function matchGame(g){
+  if(activePlat !== 'all' && !g.platforms.includes(activePlat)) return false;
+  if(activeGenre !== 'all' && !(g.genres || []).includes(activeGenre)) return false;
+  if(qualOnly && !isRelevant(g)) return false;
+  if(searchQ){
+    const q = searchQ.toLowerCase();
+    if(!g.name.toLowerCase().includes(q)) return false;
+  }
+  return true;
+}
+function applySort(arr){
+  const a = [...arr];
+  if(sortBy === 'popular') a.sort((x,y) => (y.follows||0) - (x.follows||0));
+  else if(sortBy === 'score') a.sort((x,y) => (y.score||0) - (x.score||0));
+  else a.sort((x,y) => (x.release_date||0) - (y.release_date||0));
+  return a;
+}
+
+/* ── SAVE WISHLIST ── */
+function saveWish(){
+  localStorage.setItem('gcal-wish', JSON.stringify([...WISH]));
+  updateWishBtn();
+}
+function toggleWish(id, e){
+  if(e){ e.stopPropagation(); }
+  if(WISH.has(id)) WISH.delete(id); else WISH.add(id);
+  saveWish();
+  render();
+  // Sync modal wish button if open
+  const mwb = document.getElementById('modal-wish-btn');
+  if(mwb && parseInt(mwb.dataset.id) === id) syncModalWish(id);
+}
+function updateWishBtn(){
+  const btn = document.getElementById('wishlist-btn');
+  const cnt = document.getElementById('wishlist-count');
+  cnt.textContent = WISH.size;
+  btn.classList.toggle('has-items', WISH.size > 0);
+  btn.innerHTML = (WISH.size > 0 ? '♥' : '♡') + ` <span id="wishlist-count">${WISH.size}</span>`;
 }
 
 /* ── CARD HTML ── */
-function cardHTML(g) {
-  const coverHTML = g.cover
-    ? `<img class="card-cover" src="${g.cover}" alt="${escHtml(g.name)}" loading="lazy">`
-    : `<div class="card-cover-placeholder">🎮</div>`;
-
-  const scoreHTML = g.score
-    ? `<div class="card-score ${scoreClass(g.score)}">${g.score}</div>`
-    : '';
-
-  const plats = g.platforms.slice(0, 3).map(p =>
-    `<span class="plat-chip">${platShort(p)}</span>`
-  ).join('');
-
-  return `
-<div class="card" data-id="${g.id}">
-  ${coverHTML}
-  ${scoreHTML}
-  <div class="card-body">
-    <div class="card-name">${escHtml(g.name)}</div>
-    <div class="card-date">${formatDate(g.release_date)}</div>
-    <div class="card-platforms">${plats}</div>
-  </div>
-</div>`;
+function cardHTML(g){
+  const cover = g.cover
+    ? `<img class="card-cover" src="${esc(g.cover)}" alt="${esc(g.name)}" loading="lazy">`
+    : `<div class="card-cover-ph">🎮</div>`;
+  const scoreH = g.score
+    ? `<div class="card-score ${scoreClass(g.score)}">${g.score}</div>` : '';
+  const cd = countdownLabel(g.release_date);
+  const cdH = cd ? `<div class="card-countdown ${cd.cls}">${cd.text}</div>` : '';
+  const wishCls = WISH.has(g.id) ? 'card-wish on' : 'card-wish';
+  const wishIcon = WISH.has(g.id) ? '♥' : '♡';
+  const plats = g.platforms.slice(0,3).map(p =>
+    `<span class="plat-chip">${esc(platShort(p))}</span>`).join('');
+  return `<div class="card" data-id="${g.id}">
+    ${cover}${scoreH}${cdH}
+    <button class="${wishCls}" data-wish="${g.id}" title="Mi lista">${wishIcon}</button>
+    <div class="card-body">
+      <div class="card-name">${esc(g.name)}</div>
+      <div class="card-date">${fmtDate(g.release_date)}</div>
+      <div class="card-plats">${plats}</div>
+    </div>
+  </div>`;
+}
+function platShort(p){
+  return {'Xbox Series X|S':'XSX','Xbox One':'XBO','Switch':'NSW',
+          'PlayStation 4':'PS4','PlayStation 5':'PS5'}[p] || p;
 }
 
-function platShort(p) {
-  const map = { 'PlayStation 4':'PS4', 'PlayStation 5':'PS5',
-                'Xbox Series X|S':'XSX', 'Xbox One':'XBO',
-                'Nintendo Switch':'NSW', 'PC (Microsoft Windows)':'PC' };
-  return map[p] || p;
+/* ── HERO ── */
+function renderHero(){
+  const wrap = document.getElementById('hero-wrap');
+  const pool = [...DATA.upcoming].sort((a,b) => (b.follows||0) - (a.follows||0));
+  const g = pool[0];
+  if(!g){ wrap.innerHTML = ''; return; }
+  const cd = daysUntil(g.release_date);
+  const cdCls = cd <= 0 ? 'today' : '';
+  const cdText = cd <= 0 ? '¡Ya disponible!' : cd === 1 ? 'Mañana' : `${cd} días`;
+  const cdLabel = cd <= 0 ? '' : ' para el lanzamiento';
+  const posterH = g.cover
+    ? `<img class="hero-poster" src="${esc(g.cover)}" alt="${esc(g.name)}">`
+    : `<div class="hero-poster-placeholder">🎮</div>`;
+  const platsH = g.platforms.map(p => `<span class="hero-plat">${esc(p)}</span>`).join('');
+  const wishCls = WISH.has(g.id) ? 'hero-wish-btn wishlisted' : 'hero-wish-btn';
+  const wishIcon = WISH.has(g.id) ? '♥' : '♡';
+  wrap.innerHTML = `<div class="hero">
+    <div class="hero-bg" style="background-image:url('${esc(g.cover || '')}')"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      ${posterH}
+      <div class="hero-info">
+        <div class="hero-label">Próximo lanzamiento más esperado</div>
+        <div class="hero-title">${esc(g.name)}</div>
+        ${g.developer ? `<div class="hero-dev">${esc(g.developer)}</div>` : ''}
+        <div class="hero-plats">${platsH}</div>
+        <div class="hero-countdown ${cdCls}">
+          <span class="hero-countdown-num">${cdText}</span>
+          <span class="hero-countdown-label">${cdLabel}</span>
+        </div>
+        <div class="hero-actions">
+          <button class="${wishCls}" data-wish="${g.id}" id="hero-wish-btn">${wishIcon} ${WISH.has(g.id) ? 'En mi lista' : 'Añadir a mi lista'}</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  document.getElementById('hero-wish-btn').addEventListener('click', e => toggleWish(g.id, e));
 }
-function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+/* ── GENRE BAR ── */
+function buildGenreBar(){
+  const genres = new Map();
+  [...DATA.upcoming, ...DATA.recent].forEach(g => {
+    (g.genres || []).forEach(gn => genres.set(gn, (genres.get(gn) || 0) + 1));
+  });
+  const sorted = [...genres.entries()].sort((a,b) => b[1]-a[1]).slice(0,10).map(e => e[0]);
+  const bar = document.getElementById('genre-bar');
+  bar.innerHTML = `<button class="pill genre-pill active" data-genre="all">Todos géneros</button>`
+    + sorted.map(g => `<button class="pill genre-pill" data-genre="${esc(g)}">${esc(g)}</button>`).join('');
+  bar.querySelectorAll('.genre-pill').forEach(b => {
+    b.addEventListener('click', () => {
+      bar.querySelectorAll('.genre-pill').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      activeGenre = b.dataset.genre;
+      render();
+    });
+  });
 }
 
 /* ── RENDER ── */
-function render() {
+function sectionHTML(games, title, badge){
+  if(!games.length) return '';
+  return `<section class="section">
+    <div class="section-head">
+      <h2 class="section-title">${title}</h2>
+      ${badge ? `<span class="section-badge">${badge}</span>` : ''}
+    </div>
+    <div class="game-row">${games.map(cardHTML).join('')}</div>
+  </section>`;
+}
+
+function render(){
+  renderHero();
   const main = document.getElementById('main');
 
-  const rec = filtered(allGames.recent);
-  const upc = filtered(allGames.upcoming);
+  const rec = applySort(DATA.recent.filter(matchGame));
+  const upc = applySort(DATA.upcoming.filter(matchGame));
 
-  if (!rec.length && !upc.length && !allGames.upcoming.length && !allGames.recent.length) {
-    main.innerHTML = emptyStateHTML();
+  if(!rec.length && !upc.length && !DATA.upcoming.length){
+    main.innerHTML = `<div class="empty">
+      <div class="icon">📡</div>
+      <h2>Sin datos</h2>
+      <p>Ejecuta el script para cargar juegos desde IGDB:</p>
+      <code>export TWITCH_CLIENT_ID=xxx<br>export TWITCH_CLIENT_SECRET=xxx<br>python fetch_releases.py</code>
+    </div>`;
     return;
   }
 
   let html = '';
 
-  // Recent
-  if (rec.length) {
-    html += `
-<section class="section">
-  <div class="section-head">
-    <h2 class="section-title">Recién lanzados</h2>
-    <span class="section-badge">últimos 30 días</span>
-  </div>
-  <div class="game-row">${rec.map(cardHTML).join('')}</div>
-</section>`;
-  }
+  // Wishlist
+  const wishGames = applySort([...DATA.upcoming, ...DATA.recent].filter(g => WISH.has(g.id) && matchGame(g)));
+  if(wishGames.length) html += sectionHTML(wishGames, 'Mi lista', `${wishGames.length} juegos`);
 
-  // Upcoming by month
-  if (upc.length) {
+  // Esta semana
+  const now = Date.now() / 1000;
+  const thisWeek = upc.filter(g => g.release_date && daysUntil(g.release_date) <= 6 && daysUntil(g.release_date) >= 0);
+  if(thisWeek.length) html += sectionHTML(thisWeek, 'Esta semana', '7 días');
+
+  // Recientes
+  if(rec.length) html += sectionHTML(rec, 'Recién lanzados', 'últimos 30 días');
+
+  // Por mes
+  const rest = upc.filter(g => !thisWeek.includes(g));
+  if(rest.length){
     const byMonth = {};
-    for (const g of upc) {
+    rest.forEach(g => {
       const k = monthKey(g.release_date);
-      if (!byMonth[k]) byMonth[k] = [];
+      if(!byMonth[k]) byMonth[k] = [];
       byMonth[k].push(g);
-    }
-
-    html += `<section class="section">
-  <div class="section-head">
-    <h2 class="section-title">Próximos lanzamientos</h2>
-    <span class="section-badge">${upc.length} juegos</span>
-  </div>`;
-
-    for (const [key, games] of Object.entries(byMonth).sort()) {
-      html += `
-<div class="month-block">
-  <div class="month-label">${monthLabel(key)}</div>
-  <div class="game-row">${games.map(cardHTML).join('')}</div>
-</div>`;
+    });
+    html += `<section class="section"><div class="section-head"><h2 class="section-title">Próximos lanzamientos</h2></div>`;
+    for(const[k, games] of Object.entries(byMonth).sort()){
+      html += `<div class="month-block">
+        <div class="month-label">${monthLabel(k)}</div>
+        <div class="game-row">${games.map(cardHTML).join('')}</div>
+      </div>`;
     }
     html += `</section>`;
   }
 
-  if (!html) {
-    html = `<p class="no-data" style="text-align:center;padding:48px">Sin juegos para el filtro seleccionado.</p>`;
-  }
-
+  if(!html) html = `<p style="text-align:center;padding:48px;color:var(--text-faint)">Sin resultados para el filtro seleccionado.</p>`;
   main.innerHTML = html;
-  attachCardListeners();
+  attachListeners();
+  updateWishBtn();
 }
 
-function emptyStateHTML() {
-  return `
-<div class="empty-state">
-  <div class="icon">📡</div>
-  <h2>Sin datos todavía</h2>
-  <p>El archivo <code>releases.json</code> está vacío. Configura las credenciales de IGDB y ejecuta el script para poblar la base de datos.</p>
-  <code>
-# 1. Consigue credenciales en dev.twitch.tv<br>
-# 2. Añádelas como Secrets en GitHub:<br>
-#    TWITCH_CLIENT_ID<br>
-#    TWITCH_CLIENT_SECRET<br>
-# 3. Ejecuta el workflow o:<br>
-export TWITCH_CLIENT_ID=xxx<br>
-export TWITCH_CLIENT_SECRET=xxx<br>
-python fetch_releases.py
-  </code>
-</div>`;
-}
-
-/* ── CARDS → MODAL ── */
-function attachCardListeners() {
+/* ── EVENT DELEGATION ── */
+function attachListeners(){
   document.querySelectorAll('.card').forEach(el => {
-    el.addEventListener('click', () => {
-      const id = parseInt(el.dataset.id);
-      const g = [...allGames.upcoming, ...allGames.recent].find(x => x.id === id);
-      if (g) openModal(g);
+    el.addEventListener('click', e => {
+      if(e.target.closest('[data-wish]')) return;
+      const g = findGame(parseInt(el.dataset.id));
+      if(g) openModal(g);
     });
   });
+  document.querySelectorAll('[data-wish]').forEach(btn => {
+    btn.addEventListener('click', e => toggleWish(parseInt(btn.dataset.wish), e));
+  });
+}
+function findGame(id){
+  return [...DATA.upcoming, ...DATA.recent].find(g => g.id === id);
 }
 
 /* ── MODAL ── */
 const backdrop = document.getElementById('modal-backdrop');
 const modalBox = document.getElementById('modal-box');
 
-function openModal(g) {
-  const coverWrap = document.getElementById('modal-cover-wrap');
-  const body      = document.getElementById('modal-body');
+function openModal(g){
+  const mediaEl = document.getElementById('modal-media');
+  const bodyEl  = document.getElementById('modal-body');
 
-  if (g.cover) {
-    coverWrap.innerHTML = `
-<img class="modal-cover" src="${g.cover}" alt="${escHtml(g.name)}" loading="eager">
-<div class="modal-cover-gradient"></div>
-<button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>`;
+  if(g.trailer){
+    mediaEl.innerHTML = `
+      <iframe class="modal-trailer"
+        src="https://www.youtube.com/embed/${esc(g.trailer)}?rel=0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy"></iframe>
+      <button class="modal-close" id="mcl">✕</button>`;
+  } else if(g.cover){
+    mediaEl.innerHTML = `
+      <img class="modal-cover-img" src="${esc(g.cover)}" alt="${esc(g.name)}">
+      <div class="modal-grad"></div>
+      <button class="modal-close" id="mcl">✕</button>`;
   } else {
-    coverWrap.innerHTML = `
-<div class="modal-cover-placeholder">🎮</div>
-<div class="modal-cover-gradient"></div>
-<button class="modal-close" id="modal-close-btn" aria-label="Cerrar">✕</button>`;
+    mediaEl.innerHTML = `<div class="modal-cover-ph">🎮</div><button class="modal-close" id="mcl">✕</button>`;
   }
 
-  const scoreHTML = g.score
-    ? `<div class="modal-score-big ${scoreClass(g.score)}">${g.score}</div>`
-    : '';
+  const scoreH = g.score
+    ? `<div class="modal-score-big ${scoreClass(g.score)}">${g.score}</div>` : '';
+  const infos = [];
+  if(g.release_date) infos.push({l:'Lanzamiento', v: fmtDate(g.release_date)});
+  if(g.developer)    infos.push({l:'Desarrollador', v: g.developer});
+  if(g.follows > 0)  infos.push({l:'Seguidores', v: `${g.follows.toLocaleString('es')} ♥`});
+  const infosH = infos.map(i => `<div class="modal-info">
+    <span class="modal-info-lbl">${i.l}</span>
+    <span class="modal-info-val">${esc(i.v)}</span>
+  </div>`).join('');
 
-  const genres = (g.genres || []).map(x => `<span class="genre-chip">${escHtml(x)}</span>`).join('');
-  const plats  = (g.platforms || []).map(x => `<span class="modal-plat">${escHtml(x)}</span>`).join('');
+  const cd = countdownLabel(g.release_date);
+  const cdH = cd ? `<div class="modal-countdown">⏱ ${cd.text}${cd.text.includes('días') ? ' para el lanzamiento' : ''}</div>` : '';
 
-  const infoItems = [];
-  if (g.release_date) infoItems.push({ label:'Lanzamiento', val: formatDate(g.release_date) });
-  if (g.developer)    infoItems.push({ label:'Desarrollador', val: g.developer });
-  if (g.follows > 0)  infoItems.push({ label:'Seguidores', val: `${g.follows.toLocaleString('es')} ♥` });
+  const platsH = (g.platforms||[]).map(p => `<span class="modal-plat">${esc(p)}</span>`).join('');
+  const genresH = (g.genres||[]).map(gn => `<span class="modal-genre">${esc(gn)}</span>`).join('');
 
-  const infoHTML = infoItems.map(i => `
-<div class="modal-info-item">
-  <span class="modal-info-label">${i.label}</span>
-  <span class="modal-info-val">${escHtml(i.val)}</span>
-</div>`).join('');
+  const wishCls = WISH.has(g.id) ? 'modal-wish-btn wishlisted' : 'modal-wish-btn';
+  const wishTxt = WISH.has(g.id) ? '♥ En mi lista' : '♡ Añadir a mi lista';
 
-  const trailerHTML = g.trailer
-    ? `<a class="modal-trailer-btn" href="https://www.youtube.com/watch?v=${g.trailer}" target="_blank" rel="noopener">
-        ▶ Ver tráiler en YouTube
-       </a>`
-    : '';
-
-  body.innerHTML = `
-<div class="modal-meta">
-  <h2 class="modal-title">${escHtml(g.name)}</h2>
-  ${scoreHTML}
-</div>
-<div class="modal-info-row">${infoHTML}</div>
-${genres ? `<div class="modal-genres">${genres}</div>` : ''}
-${plats  ? `<div class="modal-platforms">${plats}</div>` : ''}
-${g.summary ? `<p class="modal-summary">${escHtml(g.summary)}</p>` : ''}
-${trailerHTML}`;
+  bodyEl.innerHTML = `
+    <div class="modal-top"><h2 class="modal-title">${esc(g.name)}</h2>${scoreH}</div>
+    <div class="modal-infos">${infosH}</div>
+    ${cdH}
+    ${platsH ? `<div class="modal-plats">${platsH}</div>` : ''}
+    ${genresH ? `<div class="modal-genres">${genresH}</div>` : ''}
+    ${g.summary ? `<p class="modal-summary">${esc(g.summary)}</p>` : ''}
+    <button class="modal-wish-btn ${WISH.has(g.id) ? 'wishlisted' : ''}" id="modal-wish-btn" data-id="${g.id}">${wishTxt}</button>`;
 
   backdrop.classList.add('show');
   modalBox.classList.add('show');
   document.body.style.overflow = 'hidden';
   modalBox.scrollTop = 0;
 
-  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  document.getElementById('mcl').addEventListener('click', closeModal);
+  document.getElementById('modal-wish-btn').addEventListener('click', () => {
+    toggleWish(g.id);
+    syncModalWish(g.id);
+  });
 }
-
-function closeModal() {
+function syncModalWish(id){
+  const btn = document.getElementById('modal-wish-btn');
+  if(!btn) return;
+  const on = WISH.has(id);
+  btn.className = 'modal-wish-btn' + (on ? ' wishlisted' : '');
+  btn.textContent = on ? '♥ En mi lista' : '♡ Añadir a mi lista';
+}
+function closeModal(){
   backdrop.classList.remove('show');
   modalBox.classList.remove('show');
   document.body.style.overflow = '';
+  // Stop YouTube playback
+  const iframe = modalBox.querySelector('iframe');
+  if(iframe) iframe.src = iframe.src;
 }
-
 backdrop.addEventListener('click', closeModal);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
-/* ── FILTER PILLS ── */
-document.getElementById('filter-bar').addEventListener('click', e => {
-  const pill = e.target.closest('.pill');
-  if (!pill) return;
-  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-  pill.classList.add('active');
-  activePlat = pill.dataset.plat;
+/* ── PLATFORM FILTER ── */
+document.getElementById('platform-bar').addEventListener('click', e => {
+  const p = e.target.closest('.pill');
+  if(!p) return;
+  document.querySelectorAll('#platform-bar .pill').forEach(x => x.classList.remove('active'));
+  p.classList.add('active');
+  activePlat = p.dataset.plat;
   render();
 });
 
-/* ── LOAD DATA ── */
-async function loadData() {
-  try {
-    const r = await fetch('./releases.json');
-    if (!r.ok) throw new Error('fetch failed');
-    allGames = await r.json();
+/* ── SORT ── */
+document.getElementById('sort-select').addEventListener('change', e => {
+  sortBy = e.target.value; render();
+});
 
+/* ── QUALITY TOGGLE ── */
+document.getElementById('quality-toggle').addEventListener('change', e => {
+  qualOnly = e.target.checked; render();
+});
+
+/* ── SEARCH ── */
+let searchTimer;
+document.getElementById('search').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => { searchQ = e.target.value.trim(); render(); }, 200);
+});
+
+/* ── VIEW TOGGLE ── */
+document.getElementById('view-btn').addEventListener('click', () => {
+  viewMode = viewMode === 'grid' ? 'list' : 'grid';
+  document.body.classList.toggle('list-mode', viewMode === 'list');
+  document.getElementById('view-btn').textContent = viewMode === 'list' ? '⊞ Grid' : '☰ Lista';
+  render();
+});
+
+/* ── WISHLIST BTN (header) → scroll to section ── */
+document.getElementById('wishlist-btn').addEventListener('click', () => {
+  const sec = document.querySelector('.section');
+  if(sec && WISH.size > 0) sec.scrollIntoView({behavior:'smooth'});
+});
+
+/* ── LOAD ── */
+async function loadData(){
+  try{
+    const r = await fetch('./releases.json');
+    if(!r.ok) throw 0;
+    DATA = await r.json();
     const tag = document.getElementById('updated-tag');
-    const ago = timeAgo(allGames.updated_at);
-    if (ago) {
-      tag.textContent = `↻ ${ago}`;
-      tag.classList.add('visible');
-    }
-  } catch (e) {
+    const ago = timeAgo(DATA.updated_at);
+    if(ago) tag.textContent = ago;
+  } catch(e){
     console.warn('No se pudo cargar releases.json', e);
   }
+  buildGenreBar();
   render();
+  updateWishBtn();
 }
 
 loadData();
