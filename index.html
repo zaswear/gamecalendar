@@ -363,10 +363,9 @@
     <button class="pill active" data-plat="all">Todos</button>
     <button class="pill" data-plat="PS5">PS5</button>
     <button class="pill" data-plat="Xbox Series X|S">Xbox</button>
+    <button class="pill" data-plat="Switch 2">Switch 2</button>
     <button class="pill" data-plat="Switch">Switch</button>
     <button class="pill" data-plat="PC">PC</button>
-    <button class="pill" data-plat="PS4">PS4</button>
-    <button class="pill" data-plat="Xbox One">Xbox One</button>
   </div>
   <div class="filter-row" id="genre-bar"></div>
   <div class="filter-controls">
@@ -395,7 +394,7 @@
 <script>
 const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
                 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-const CONSOLE_PLATS = new Set(['PS5','PS4','Xbox Series X|S','Xbox One','Switch']);
+const CONSOLE_PLATS = new Set(['PS5','Xbox Series X|S','Switch','Switch 2']);
 
 let DATA   = {upcoming:[], recent:[]};
 let WISH   = new Set(JSON.parse(localStorage.getItem('gcal-wish') || '[]'));

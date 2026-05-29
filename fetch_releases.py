@@ -17,11 +17,10 @@ CLIENT_SECRET = os.environ["TWITCH_CLIENT_SECRET"]
 
 PLATFORMS = {
     6:   "PC",
-    48:  "PS4",
-    49:  "Xbox One",
     130: "Switch",
     167: "PS5",
     169: "Xbox Series X|S",
+    508: "Switch 2",
 }
 PLATFORM_IDS = ",".join(str(p) for p in PLATFORMS)
 
