@@ -7,7 +7,7 @@
   <title>GameCalendar · lanzamientos</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230e0f14'/><circle cx='16' cy='16' r='10' stroke='%237c6af7' stroke-width='2' fill='none'/><circle cx='16' cy='16' r='3' fill='%237c6af7'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg:           #0e0f14;
@@ -33,7 +33,7 @@
       --radius-lg:    16px;
     }
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100dvh;overflow-x:hidden}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100dvh;overflow-x:hidden}
 
     /* ── HEADER ── */
     .site-header{
@@ -49,7 +49,7 @@
     .search-wrap{flex:1;max-width:280px}
     .search-wrap input{
       width:100%;background:var(--bg-card);border:1px solid var(--border);
-      border-radius:8px;padding:7px 12px;font-family:'Inter',sans-serif;
+      border-radius:8px;padding:7px 12px;font-family:'DM Sans',sans-serif;
       font-size:13px;color:var(--text);outline:none;
       transition:border-color .15s;
     }
@@ -61,7 +61,7 @@
       padding:5px 10px;border-radius:8px;
       border:1px solid var(--border);background:transparent;
       color:var(--text-mid);font-size:12px;font-weight:500;cursor:pointer;
-      font-family:'Inter',sans-serif;transition:border-color .15s,color .15s;
+      font-family:'DM Sans',sans-serif;transition:border-color .15s,color .15s;
       white-space:nowrap;
     }
     .hdr-btn:hover{border-color:var(--border-hi);color:var(--text)}
@@ -82,24 +82,54 @@
     .filter-row::-webkit-scrollbar{display:none}
     .filter-controls{display:flex;align-items:center;gap:12px;padding-top:2px}
     .pill{
-      flex-shrink:0;padding:4px 11px;border-radius:99px;
+      flex-shrink:0;padding:6px 14px;border-radius:99px;
       border:1px solid var(--border);background:transparent;
-      color:var(--text-mid);font-family:'Inter',sans-serif;
+      color:var(--text-mid);font-family:'DM Sans',sans-serif;
       font-size:11px;font-weight:500;cursor:pointer;
+      min-height:36px;display:inline-flex;align-items:center;
       transition:background .15s,border-color .15s,color .15s;white-space:nowrap;
     }
     .pill:hover{border-color:var(--border-hi);color:var(--text)}
     .pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
     .genre-pill.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
+    .sort-label{font-size:10px;color:var(--text-faint);white-space:nowrap}
     .sort-select{
       background:transparent;border:1px solid var(--border);border-radius:7px;
-      color:var(--text-mid);font-family:'Inter',sans-serif;font-size:11px;
-      padding:4px 8px;cursor:pointer;outline:none;
+      color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:11px;
+      padding:6px 8px;cursor:pointer;outline:none;min-height:32px;
     }
     .sort-select option{background:var(--bg-modal)}
-    .quality-toggle{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none}
-    .quality-toggle input{accent-color:var(--accent);width:14px;height:14px;cursor:pointer}
+    .quality-toggle{display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;min-height:32px}
+    .quality-toggle input{accent-color:var(--accent);width:15px;height:15px;cursor:pointer;flex-shrink:0}
     .quality-toggle span{font-size:11px;color:var(--text-mid)}
+    .quality-info{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:14px;height:14px;border-radius:50%;
+      font-size:9px;color:var(--text-faint);border:1px solid var(--text-faint);
+      cursor:help;flex-shrink:0;line-height:1;
+    }
+    /* Mobile: colapsa géneros y controles tras botón */
+    .filter-toggle-btn{
+      display:none;flex-shrink:0;
+      padding:6px 12px;border-radius:99px;min-height:36px;
+      border:1px solid var(--border);background:transparent;
+      color:var(--text-mid);font-size:11px;font-weight:500;cursor:pointer;
+      font-family:'DM Sans',sans-serif;align-items:center;gap:5px;
+      transition:border-color .15s,color .15s;
+    }
+    .filter-toggle-btn.open{border-color:var(--accent);color:var(--accent)}
+    .filters-secondary{display:flex;flex-direction:column;gap:6px}
+    @media(max-width:600px){
+      .filter-toggle-btn{display:inline-flex}
+      .filters-secondary{display:none}
+      .filters-secondary.open{display:flex}
+      .main{padding:20px 14px 48px}
+      .hero-content{padding:20px 16px 24px;gap:16px}
+      .hero-poster{width:80px}
+      .hero-title{font-size:20px}
+      .updated-tag{display:none}
+      .search-wrap{max-width:140px}
+    }
 
     /* ── HERO ── */
     .hero{
@@ -141,7 +171,7 @@
     .hero-title{
       font-family:'Syne',sans-serif;font-size:clamp(22px,5vw,36px);
       font-weight:800;line-height:1.1;margin-bottom:8px;
-      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+      display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
     }
     .hero-dev{font-size:13px;color:var(--text-mid);margin-bottom:10px}
     .hero-plats{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
@@ -165,7 +195,7 @@
       display:flex;align-items:center;gap:6px;
       padding:8px 16px;border-radius:9px;border:1px solid var(--border);
       background:rgba(255,255,255,.06);color:var(--text);
-      font-family:'Inter',sans-serif;font-size:13px;font-weight:500;cursor:pointer;
+      font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;
       transition:background .15s,border-color .15s;
     }
     .hero-wish-btn:hover{background:rgba(255,255,255,.1);border-color:var(--border-hi)}
@@ -212,10 +242,10 @@
     .score-ok{background:rgba(240,180,41,.85);color:#1a1000}
     .score-bad{background:rgba(248,104,104,.85);color:#1a0000}
     .card-wish{
-      position:absolute;top:7px;left:7px;
-      width:26px;height:26px;border-radius:6px;
+      position:absolute;top:6px;left:6px;
+      width:36px;height:36px;border-radius:8px;
       background:rgba(0,0,0,.5);backdrop-filter:blur(8px);
-      border:none;color:rgba(255,255,255,.5);font-size:13px;cursor:pointer;
+      border:none;color:rgba(255,255,255,.5);font-size:14px;cursor:pointer;
       display:flex;align-items:center;justify-content:center;
       transition:color .15s,background .15s;
     }
@@ -231,7 +261,7 @@
     .countdown-week{background:rgba(240,120,48,.85);color:#fff}
     .countdown-soon{background:rgba(124,106,247,.7);color:#fff}
     .card-body{padding:9px 10px 10px}
-    .card-name{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .card-name{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .card-date{font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);margin-bottom:5px}
     .card-plats{display:flex;flex-wrap:wrap;gap:3px}
     .plat-chip{font-size:8px;font-weight:500;padding:2px 4px;border-radius:3px;background:rgba(255,255,255,.06);color:var(--text-mid);white-space:nowrap}
@@ -249,7 +279,7 @@
     body.list-mode .countdown-week{color:var(--warm)!important}
     body.list-mode .countdown-soon{color:var(--accent)!important}
     body.list-mode .card-body{flex:1;display:flex;align-items:center;gap:12px;padding:0 56px 0 12px;overflow:hidden}
-    body.list-mode .card-name{flex:1;-webkit-line-clamp:1;margin:0}
+    body.list-mode .card-name{flex:1;-webkit-line-clamp:1;line-clamp:1;margin:0}
     body.list-mode .card-date{margin:0;white-space:nowrap}
     body.list-mode .card-plats{flex-wrap:nowrap;gap:3px}
 
@@ -286,7 +316,7 @@
     }
     #modal-box.show{transform:translateY(0)}
     .modal-drag{width:36px;height:4px;background:var(--border);border-radius:2px;margin:12px auto 0}
-    .modal-media{position:relative;width:100%;background:#000}
+    .modal-media{position:relative;width:100%;background:var(--bg)}
     .modal-trailer{width:100%;aspect-ratio:16/9;border:none;display:block}
     .modal-cover-img{width:100%;height:200px;object-fit:cover;display:block}
     .modal-cover-ph{width:100%;height:200px;background:linear-gradient(135deg,#1a1c28,#0e0f14);display:flex;align-items:center;justify-content:center;font-size:56px}
@@ -328,20 +358,12 @@
       display:inline-flex;align-items:center;gap:7px;
       padding:9px 18px;border-radius:9px;border:1px solid var(--border);
       background:rgba(255,255,255,.05);color:var(--text);
-      font-family:'Inter',sans-serif;font-size:13px;font-weight:500;cursor:pointer;
+      font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;
       transition:background .15s,border-color .15s,color .15s;
     }
     .modal-wish-btn:hover{background:rgba(255,255,255,.09);border-color:var(--border-hi)}
     .modal-wish-btn.wishlisted{background:rgba(232,96,138,.12);border-color:var(--pink);color:var(--pink)}
 
-    @media(max-width:600px){
-      .main{padding:20px 14px 48px}
-      .hero-content{padding:20px 16px 24px;gap:16px}
-      .hero-poster{width:80px}
-      .hero-title{font-size:20px}
-      .updated-tag{display:none}
-      .search-wrap{max-width:140px}
-    }
   </style>
 </head>
 <body>
@@ -366,18 +388,23 @@
     <button class="pill" data-plat="Switch 2">Switch 2</button>
     <button class="pill" data-plat="Switch">Switch</button>
     <button class="pill" data-plat="PC">PC</button>
+    <button class="filter-toggle-btn" id="filter-toggle-btn">Filtros ▾</button>
   </div>
-  <div class="filter-row" id="genre-bar"></div>
-  <div class="filter-controls">
-    <select class="sort-select" id="sort-select">
-      <option value="date">Ordenar: fecha</option>
-      <option value="popular">Ordenar: popularidad</option>
-      <option value="score">Ordenar: puntuación</option>
-    </select>
-    <label class="quality-toggle">
-      <input type="checkbox" id="quality-toggle">
-      <span>Solo relevantes</span>
-    </label>
+  <div class="filters-secondary" id="filters-secondary">
+    <div class="filter-row" id="genre-bar"></div>
+    <div class="filter-controls">
+      <span class="sort-label">Ordenar</span>
+      <select class="sort-select" id="sort-select">
+        <option value="date">Fecha</option>
+        <option value="popular">Popularidad</option>
+        <option value="score">Puntuación</option>
+      </select>
+      <label class="quality-toggle" title="Muestra solo juegos con seguidores en IGDB, disponibles en consola, o con tráiler confirmado">
+        <input type="checkbox" id="quality-toggle">
+        <span>Solo relevantes</span>
+        <span class="quality-info">i</span>
+      </label>
+    </div>
   </div>
 </div>
 
@@ -558,7 +585,7 @@ function renderHero(){
           <span class="hero-countdown-label">${cdLabel}</span>
         </div>
         <div class="hero-actions">
-          <button class="${wishCls}" data-wish="${g.id}" id="hero-wish-btn">${wishIcon} ${WISH.has(g.id) ? 'En mi lista' : 'Añadir a mi lista'}</button>
+          <button class="${wishCls}" data-wish="${g.id}" id="hero-wish-btn">${wishIcon} ${WISH.has(g.id) ? 'En mi lista' : 'Mi lista'}</button>
         </div>
       </div>
     </div>
@@ -607,10 +634,9 @@ function render(){
 
   if(!rec.length && !upc.length && !DATA.upcoming.length){
     main.innerHTML = `<div class="empty">
-      <div class="icon">📡</div>
-      <h2>Sin datos</h2>
-      <p>Ejecuta el script para cargar juegos desde IGDB:</p>
-      <code>export TWITCH_CLIENT_ID=xxx<br>export TWITCH_CLIENT_SECRET=xxx<br>python fetch_releases.py</code>
+      <div class="icon">🎮</div>
+      <h2>Sin lanzamientos cargados</h2>
+      <p>Los datos aún no están disponibles. El calendario se actualiza automáticamente cada día; si acabas de configurarlo, lanza el workflow desde GitHub Actions.</p>
     </div>`;
     return;
   }
@@ -696,7 +722,7 @@ function openModal(g){
   }
 
   const scoreH = g.score
-    ? `<div class="modal-score-big ${scoreClass(g.score)}">${g.score}</div>` : '';
+    ? `<div class="modal-score-big ${scoreClass(g.score)}" title="Puntuación IGDB">${g.score}<span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;display:block;margin-top:1px;opacity:.7">IGDB</span></div>` : '';
   const infos = [];
   if(g.release_date) infos.push({l:'Lanzamiento', v: fmtDate(g.release_date)});
   if(g.developer)    infos.push({l:'Desarrollador', v: g.developer});
@@ -713,7 +739,7 @@ function openModal(g){
   const genresH = (g.genres||[]).map(gn => `<span class="modal-genre">${esc(gn)}</span>`).join('');
 
   const wishCls = WISH.has(g.id) ? 'modal-wish-btn wishlisted' : 'modal-wish-btn';
-  const wishTxt = WISH.has(g.id) ? '♥ En mi lista' : '♡ Añadir a mi lista';
+  const wishTxt = WISH.has(g.id) ? '♥ Mi lista' : '♡ Mi lista';
 
   bodyEl.innerHTML = `
     <div class="modal-top"><h2 class="modal-title">${esc(g.name)}</h2>${scoreH}</div>
@@ -740,7 +766,7 @@ function syncModalWish(id){
   if(!btn) return;
   const on = WISH.has(id);
   btn.className = 'modal-wish-btn' + (on ? ' wishlisted' : '');
-  btn.textContent = on ? '♥ En mi lista' : '♡ Añadir a mi lista';
+  btn.textContent = on ? '♥ Mi lista' : '♡ Mi lista';
 }
 function closeModal(){
   backdrop.classList.remove('show');
@@ -788,6 +814,15 @@ document.getElementById('view-btn').addEventListener('click', () => {
   render();
 });
 
+/* ── MOBILE FILTER TOGGLE ── */
+document.getElementById('filter-toggle-btn').addEventListener('click', () => {
+  const sec = document.getElementById('filters-secondary');
+  const btn = document.getElementById('filter-toggle-btn');
+  const open = sec.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.textContent = open ? 'Filtros ▴' : 'Filtros ▾';
+});
+
 /* ── WISHLIST BTN (header) → scroll to section ── */
 document.getElementById('wishlist-btn').addEventListener('click', () => {
   const sec = document.querySelector('.section');
@@ -796,6 +831,8 @@ document.getElementById('wishlist-btn').addEventListener('click', () => {
 
 /* ── LOAD ── */
 async function loadData(){
+  document.getElementById('main').innerHTML =
+    `<div class="empty"><div class="icon" style="font-size:32px;opacity:.4">⏳</div><p style="color:var(--text-faint);font-size:13px">Cargando lanzamientos…</p></div>`;
   try{
     const r = await fetch('./releases.json');
     if(!r.ok) throw 0;
