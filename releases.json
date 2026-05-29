@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T07:09:24+00:00",
+  "updated_at": "2026-05-29T07:23:58+00:00",
   "upcoming": [
     {
       "id": 392269,
@@ -55,7 +55,6 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobyyb.jpg",
       "release_date": 1780099200,
       "platforms": [
-        "PS4",
         "PS5"
       ],
       "genres": [
@@ -218,7 +217,8 @@
       "platforms": [
         "PC",
         "PS5",
-        "Switch"
+        "Switch",
+        "Switch 2"
       ],
       "genres": [
         "Point-and-click",
@@ -1597,6 +1597,28 @@
       "follows": 0
     },
     {
+      "id": 388431,
+      "name": "eFootball Kick-Off!",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobfsl.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobfsl.jpg",
+      "release_date": 1780444800,
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Sport"
+      ],
+      "themes": [
+        1
+      ],
+      "developer": "Konami Digital Entertainment",
+      "publisher": "Konami Digital Entertainment",
+      "score": null,
+      "summary": "Experience the excitement of every goal – solo or with everyone! Begin your football journey with eFootball Kick-Off!",
+      "trailer": "zXUIjQHTns8",
+      "follows": 0
+    },
+    {
       "id": 402321,
       "name": "Echoes of the Museum",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc398.jpg",
@@ -2095,7 +2117,8 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc2vq.jpg",
       "release_date": 1780531200,
       "platforms": [
-        "Switch"
+        "Switch",
+        "Switch 2"
       ],
       "genres": [
         "Puzzle"
@@ -2505,6 +2528,7 @@
       "platforms": [
         "PC",
         "PS5",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -2517,7 +2541,7 @@
         33
       ],
       "developer": "Cyberwave",
-      "publisher": "rokaplay",
+      "publisher": "Metaroot",
       "score": null,
       "summary": "Solarpunk is a survival game in a technically advanced world of floating islands. Alone or together with your friends, you can construct buildings, grow food, craft gadgets and explore distant islands with your own airship.\n\nUse sunlight, wind and water to create an energy system and automate your processes like gather",
       "trailer": "7Zhfg938Bt8",
@@ -2645,7 +2669,6 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc3sx.jpg",
       "release_date": 1780876800,
       "platforms": [
-        "PS4",
         "PS5"
       ],
       "genres": [
@@ -2976,9 +2999,7 @@
       "release_date": 1781136000,
       "platforms": [
         "PC",
-        "PS4",
         "PS5",
-        "Xbox One",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -3000,7 +3021,6 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coajax.jpg",
       "release_date": 1781136000,
       "platforms": [
-        "PS4",
         "PS5",
         "Switch"
       ],
@@ -3025,7 +3045,6 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobftw.jpg",
       "release_date": 1781136000,
       "platforms": [
-        "PS4",
         "Switch"
       ],
       "genres": [
@@ -3095,6 +3114,7 @@
         "PC",
         "PS5",
         "Switch",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -3518,6 +3538,7 @@
       "platforms": [
         "PC",
         "PS5",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -3587,7 +3608,6 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc3sz.jpg",
       "release_date": 1781654400,
       "platforms": [
-        "PS4",
         "PS5"
       ],
       "genres": [
@@ -3611,7 +3631,6 @@
       "release_date": 1781740800,
       "platforms": [
         "PC",
-        "PS4",
         "PS5",
         "Switch",
         "Xbox Series X|S"
@@ -3665,6 +3684,7 @@
       "platforms": [
         "PC",
         "PS5",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -3675,7 +3695,7 @@
         1,
         17
       ],
-      "developer": "Clay Tech Works",
+      "developer": "Square Enix Creative Studio 5",
       "publisher": "Square Enix",
       "score": null,
       "summary": "The Adventures of Elliot: The Millennium Tales is an action RPG set in the world of Philabieldia - a beautiful but savage land dominated by warring beast tribes. Humanity’s last bastion is the Kingdom of Huther, protected by its tall walls and Princess Heuria’s powerful magic.\n\nWhen a mysterious set of ruins is discove",
@@ -3766,6 +3786,7 @@
       "platforms": [
         "PC",
         "PS5",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [],
@@ -3808,6 +3829,7 @@
         "PC",
         "PS5",
         "Switch",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -4316,107 +4338,6 @@
       "summary": "A fast-paced rhythm game where every mistake costs a life. Hit the right keys in time with the music, survive escalating mutators, upgrade your skills, and push your run as far as possible.",
       "trailer": "29nDa_WffS4",
       "follows": 0
-    },
-    {
-      "id": 356562,
-      "name": "Kiyo: Bunny Tyranny",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa5r2.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coa5r2.jpg",
-      "release_date": 1782345600,
-      "platforms": [
-        "PC",
-        "Switch"
-      ],
-      "genres": [
-        "Platform",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        1
-      ],
-      "developer": "Pixel Rats",
-      "publisher": "CobraTekku Games",
-      "score": null,
-      "summary": "Control the body of Kiyo, a feline ex-predator trapped in a neon-lit, dystopian city dominated by smartphone-addicted bunnies. Discover their deepest secrets, and free everyone from their tyrannical grip in this stealthy platform adventure.",
-      "trailer": "kFEPWBAo8hg",
-      "follows": 0
-    },
-    {
-      "id": 374305,
-      "name": "Dragon Quest X: Jikuu no Mayoigo-tachi Online",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob3wf.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cob3wf.jpg",
-      "release_date": 1782345600,
-      "platforms": [
-        "PC",
-        "PS4",
-        "Switch"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Adventure"
-      ],
-      "themes": [
-        17,
-        38
-      ],
-      "developer": "Square Enix Creative Studio 4",
-      "publisher": "Square Enix",
-      "score": null,
-      "summary": "Dragon Quest X: Jikuu no Mayoigotachi Online is the seventh major expansion for Dragon Quest X, known as Version 8. It adds a new story, characters, and content as part of the ongoing Dragon Quest X experience, but requires prior access to earlier Dragon Quest X Online content (or the All-In-One version covering versio",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 378910,
-      "name": "Go Hell Go Gou: Tsukiotoshitego",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coawao.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coawao.jpg",
-      "release_date": 1782345600,
-      "platforms": [
-        "PC",
-        "PS4",
-        "Switch"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Visual Novel"
-      ],
-      "themes": [
-        1,
-        27
-      ],
-      "developer": "ENTERGRAM",
-      "publisher": "ENTERGRAM",
-      "score": null,
-      "summary": "An expanded version of goHELLgo with a new facility and corresponding characters, new events for the main heroines and 3 new story characters.",
-      "trailer": "WbXFrUjL-uY",
-      "follows": 0
-    },
-    {
-      "id": 386594,
-      "name": "Bobble and the Tri-Crystal",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobbwv.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobbwv.jpg",
-      "release_date": 1782345600,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Shooter",
-        "Indie"
-      ],
-      "themes": [
-        1,
-        32
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "Swim, shoot, and save the ocean! Play as a detective fish in this fast-paced 2D retro shoot 'em up! Unlock multiple weapons, defeat enemy hordes, and capture bosses before it's too late!",
-      "trailer": "GuND4MIO238",
-      "follows": 0
     }
   ],
   "recent": [
@@ -4494,10 +4415,8 @@
       "release_date": 1780012800,
       "platforms": [
         "PC",
-        "PS4",
         "PS5",
         "Switch",
-        "Xbox One",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -5383,6 +5302,7 @@
         "PC",
         "PS5",
         "Switch",
+        "Switch 2",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -5634,9 +5554,7 @@
       "release_date": 1779926400,
       "platforms": [
         "PC",
-        "PS4",
         "PS5",
-        "Xbox One",
         "Xbox Series X|S"
       ],
       "genres": [
@@ -5691,6 +5609,29 @@
       "score": null,
       "summary": "A visual novel with AMSR starring the VTuber Rica Hanamiya.",
       "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 401101,
+      "name": "Lollipop Chainsaw RePop: Nintendo Switch 2 Edition",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc1mp.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc1mp.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Hack and slash/Beat 'em up"
+      ],
+      "themes": [
+        1,
+        27
+      ],
+      "developer": "Dragami Games",
+      "publisher": "Dragami Games",
+      "score": null,
+      "summary": "Lollipop Chainsaw RePOP is an action game that follows zombie hunter Juliet Starling as she battles hordes of undead using chainsaw-based combat and ranged weapons. This remastered release updates the original game with enhanced visuals, faster-paced gameplay, and additional quality-of-life improvements.\n\nThe Nintendo ",
+      "trailer": "khhPiMuBFH4",
       "follows": 0
     },
     {
@@ -5764,7 +5705,8 @@
       "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobzc7.jpg",
       "release_date": 1779926400,
       "platforms": [
-        "PS5"
+        "PS5",
+        "Switch 2"
       ],
       "genres": [
         "Role-playing (RPG)",
@@ -5953,7 +5895,6 @@
       "release_date": 1779926400,
       "platforms": [
         "PC",
-        "PS4",
         "PS5",
         "Switch"
       ],
@@ -6185,7 +6126,8 @@
       "release_date": 1779926400,
       "platforms": [
         "PC",
-        "PS5"
+        "PS5",
+        "Switch 2"
       ],
       "genres": [
         "Role-playing (RPG)",
@@ -6591,28 +6533,6 @@
       "publisher": "Two Cats Games",
       "score": null,
       "summary": "Grab your crayons and hunt for 100 hidden cats across a beautifully hand-drawn map. Play solo or invite a friend to join online, then bring each scene to life with guided color-by-numbers or your own palette — all in a relaxing, soothing atmosphere.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 351371,
-      "name": "Feywood Wanderers",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc1fi.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc1fi.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Strategy",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": "Vicente Miranda",
-      "publisher": "Vicente Miranda",
-      "score": null,
-      "summary": "Explore the Feywood as you defeat enemies in tactical, turn-based battles. Find loot, abilities, secrets and meet helpful denizens of the forest as you delve deeper, customize your character with a great variety of classes, races, and equipment in this highly replayable extraction roguelike.",
       "trailer": null,
       "follows": 0
     }
