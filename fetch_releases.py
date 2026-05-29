@@ -184,10 +184,7 @@ def fetch_games(token, after, before, sort="first_release_date asc", limit=200):
     query = f"""{GAME_FIELDS}
 where first_release_date >= {after}
   & first_release_date <= {before}
-  & platforms = ({PLATFORM_IDS})
-  & category != 1
-  & category != 3
-  & category != 5;
+  & platforms = ({PLATFORM_IDS});
 sort {sort};
 limit {limit};"""
     return igdb(token, "games", query)
