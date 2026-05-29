@@ -10,25 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:           #0e0f14;
-      --bg-card:      #161820;
-      --bg-modal:     #1c1e28;
-      --bg-elevated:  #1e2030;
-      --border:       rgba(255,255,255,0.07);
-      --border-hi:    rgba(255,255,255,0.16);
-      --text:         #e2e4ef;
-      --text-mid:     #8a8d9e;
-      --text-faint:   #4a4d5e;
-      --accent:       #7c6af7;
-      --accent-dim:   rgba(124,106,247,0.15);
-      --gold:         #f0b429;
-      --gold-dim:     rgba(240,180,41,0.14);
-      --green:        #3ecf8e;
-      --green-dim:    rgba(62,207,142,0.12);
-      --red:          #f86868;
-      --warm:         #f07830;
-      --warm-dim:     rgba(240,120,48,0.14);
-      --pink:         #e8608a;
+      --bg:           oklch(9%  0.008 265);
+      --bg-card:      oklch(12% 0.009 265);
+      --bg-modal:     oklch(15% 0.011 265);
+      --bg-elevated:  oklch(16% 0.013 265);
+      --border:       oklch(100% 0 0 / 7%);
+      --border-hi:    oklch(100% 0 0 / 16%);
+      --text:         oklch(90% 0.009 265);
+      --text-mid:     oklch(61% 0.009 265);
+      --text-faint:   oklch(38% 0.010 265);
+      --accent:       oklch(58% 0.20  285);
+      --accent-dim:   oklch(58% 0.20  285 / 15%);
+      --gold:         oklch(78% 0.14   75);
+      --gold-dim:     oklch(78% 0.14   75 / 14%);
+      --green:        oklch(75% 0.17  155);
+      --green-dim:    oklch(75% 0.17  155 / 12%);
+      --red:          oklch(66% 0.18   25);
+      --warm:         oklch(67% 0.17   45);
+      --warm-dim:     oklch(67% 0.17   45 / 14%);
+      --pink:         oklch(60% 0.17    0);
       --radius:       10px;
       --radius-lg:    16px;
     }
@@ -38,7 +38,7 @@
     /* ── HEADER ── */
     .site-header{
       position:sticky;top:0;z-index:50;
-      background:rgba(14,15,20,.92);
+      background:oklch(9% 0.008 265 / 92%);
       backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
       border-bottom:1px solid var(--border);
       padding:0 20px;
@@ -72,7 +72,7 @@
     /* ── FILTERS ── */
     .filters-wrap{
       position:sticky;top:54px;z-index:40;
-      background:rgba(14,15,20,.88);
+      background:oklch(9% 0.008 265 / 88%);
       backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
       border-bottom:1px solid var(--border);
       padding:8px 20px 6px;
@@ -90,7 +90,7 @@
       transition:background .15s,border-color .15s,color .15s;white-space:nowrap;
     }
     .pill:hover{border-color:var(--border-hi);color:var(--text)}
-    .pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    .pill.active{background:var(--accent);border-color:var(--accent);color:oklch(97% 0 0)}
     .genre-pill.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
     .sort-label{font-size:10px;color:var(--text-faint);white-space:nowrap}
     .sort-select{
@@ -258,8 +258,8 @@
       padding:3px 0;
     }
     .countdown-today{background:rgba(62,207,142,.85);color:#0a2016}
-    .countdown-week{background:rgba(240,120,48,.85);color:#fff}
-    .countdown-soon{background:rgba(124,106,247,.7);color:#fff}
+    .countdown-week{background:rgba(240,120,48,.85);color:oklch(97% 0 0)}
+    .countdown-soon{background:rgba(124,106,247,.7);color:oklch(97% 0 0)}
     .card-body{padding:9px 10px 10px}
     .card-name{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .card-date{font-family:'Space Mono',monospace;font-size:9px;color:var(--accent);margin-bottom:5px}
@@ -297,7 +297,7 @@
 
     /* ── MODAL ── */
     #modal-backdrop{
-      position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:100;
+      position:fixed;inset:0;background:oklch(0% 0 0 / 78%);z-index:100;
       opacity:0;pointer-events:none;transition:opacity .25s;
     }
     #modal-backdrop.show{opacity:1;pointer-events:auto}
@@ -322,12 +322,14 @@
     .modal-cover-ph{width:100%;height:200px;background:linear-gradient(135deg,#1a1c28,#0e0f14);display:flex;align-items:center;justify-content:center;font-size:56px}
     .modal-grad{position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,var(--bg-modal))}
     .modal-close{
-      position:absolute;top:10px;right:12px;
-      width:30px;height:30px;border-radius:50%;
-      background:rgba(0,0,0,.5);border:none;
-      color:rgba(255,255,255,.7);font-size:15px;cursor:pointer;
+      position:absolute;top:8px;right:10px;
+      width:40px;height:40px;border-radius:50%;
+      background:oklch(0% 0 0 / 45%);border:none;
+      color:oklch(100% 0 0 / 75%);font-size:15px;cursor:pointer;
       display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);z-index:2;
+      transition:background .15s;
     }
+    .modal-close:hover{background:oklch(0% 0 0 / 65%)}
     .modal-body{padding:4px 22px 28px}
     .modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
     .modal-title{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;line-height:1.2}
@@ -364,6 +366,23 @@
     .modal-wish-btn:hover{background:rgba(255,255,255,.09);border-color:var(--border-hi)}
     .modal-wish-btn.wishlisted{background:rgba(232,96,138,.12);border-color:var(--pink);color:var(--pink)}
 
+    /* ── FOCUS VISIBLE ── */
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .card:focus-visible{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+    .search-wrap input:focus-visible{border-color:var(--accent);outline:none}
+    .pill:focus-visible,.hdr-btn:focus-visible,.filter-toggle-btn:focus-visible,
+    .sort-select:focus-visible,.modal-wish-btn:focus-visible,.hero-wish-btn:focus-visible,
+    .modal-close:focus-visible,.card-wish:focus-visible{
+      outline:2px solid var(--accent);outline-offset:2px
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        transition-duration:.01ms!important;
+        animation-duration:.01ms!important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -539,9 +558,10 @@ function cardHTML(g){
   const wishIcon = WISH.has(g.id) ? '♥' : '♡';
   const plats = g.platforms.slice(0,3).map(p =>
     `<span class="plat-chip">${esc(platShort(p))}</span>`).join('');
-  return `<div class="card" data-id="${g.id}">
+  const wishLabel = WISH.has(g.id) ? 'Quitar de mi lista' : 'Añadir a mi lista';
+  return `<div class="card" data-id="${g.id}" tabindex="0" role="button" aria-label="${esc(g.name)}, ${fmtDate(g.release_date)}">
     ${cover}${scoreH}${cdH}
-    <button class="${wishCls}" data-wish="${g.id}" title="Mi lista">${wishIcon}</button>
+    <button class="${wishCls}" data-wish="${g.id}" title="${wishLabel}" aria-label="${wishLabel}" aria-pressed="${WISH.has(g.id)}">${wishIcon}</button>
     <div class="card-body">
       <div class="card-name">${esc(g.name)}</div>
       <div class="card-date">${fmtDate(g.release_date)}</div>
@@ -683,11 +703,13 @@ function render(){
 /* ── EVENT DELEGATION ── */
 function attachListeners(){
   document.querySelectorAll('.card').forEach(el => {
-    el.addEventListener('click', e => {
+    const open = e => {
       if(e.target.closest('[data-wish]')) return;
       const g = findGame(parseInt(el.dataset.id));
-      if(g) openModal(g);
-    });
+      if(g) openModal(g, el);
+    };
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(e); } });
   });
   document.querySelectorAll('[data-wish]').forEach(btn => {
     btn.addEventListener('click', e => toggleWish(parseInt(btn.dataset.wish), e));
@@ -700,8 +722,10 @@ function findGame(id){
 /* ── MODAL ── */
 const backdrop = document.getElementById('modal-backdrop');
 const modalBox = document.getElementById('modal-box');
+let _triggerEl = null;
 
-function openModal(g){
+function openModal(g, triggerEl){
+  _triggerEl = triggerEl || null;
   const mediaEl = document.getElementById('modal-media');
   const bodyEl  = document.getElementById('modal-body');
 
@@ -711,14 +735,14 @@ function openModal(g){
         src="https://www.youtube.com/embed/${esc(g.trailer)}?rel=0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen loading="lazy"></iframe>
-      <button class="modal-close" id="mcl">✕</button>`;
+      <button class="modal-close" id="mcl" aria-label="Cerrar">✕</button>`;
   } else if(g.cover){
     mediaEl.innerHTML = `
       <img class="modal-cover-img" src="${esc(g.cover)}" alt="${esc(g.name)}">
       <div class="modal-grad"></div>
-      <button class="modal-close" id="mcl">✕</button>`;
+      <button class="modal-close" id="mcl" aria-label="Cerrar">✕</button>`;
   } else {
-    mediaEl.innerHTML = `<div class="modal-cover-ph">🎮</div><button class="modal-close" id="mcl">✕</button>`;
+    mediaEl.innerHTML = `<div class="modal-cover-ph">🎮</div><button class="modal-close" id="mcl" aria-label="Cerrar">✕</button>`;
   }
 
   const scoreH = g.score
@@ -772,9 +796,9 @@ function closeModal(){
   backdrop.classList.remove('show');
   modalBox.classList.remove('show');
   document.body.style.overflow = '';
-  // Stop YouTube playback
   const iframe = modalBox.querySelector('iframe');
   if(iframe) iframe.src = iframe.src;
+  if(_triggerEl) { _triggerEl.focus(); _triggerEl = null; }
 }
 backdrop.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
@@ -841,7 +865,7 @@ async function loadData(){
     const ago = timeAgo(DATA.updated_at);
     if(ago) tag.textContent = ago;
   } catch(e){
-    console.warn('No se pudo cargar releases.json', e);
+    // releases.json no disponible — se muestra estado vacío
   }
   buildGenreBar();
   render();
