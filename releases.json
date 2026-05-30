@@ -1,75 +1,6 @@
 {
-  "updated_at": "2026-05-29T10:50:57+00:00",
+  "updated_at": "2026-05-30T09:22:41+00:00",
   "upcoming": [
-    {
-      "id": 392269,
-      "name": "Project Microchip",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobm3f.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobm3f.jpg",
-      "release_date": 1780099200,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        1,
-        19
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "A social deduction survival game set in a radiation-filled, abandoned forest. Survivors must complete tasks to stay alive, while the Infected hunt them down.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 397229,
-      "name": "Smile Town",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobvno.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobvno.jpg",
-      "release_date": 1780099200,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Indie"
-      ],
-      "themes": [
-        18
-      ],
-      "developer": "HAGUKI",
-      "publisher": "Hug&Kiss Games",
-      "score": null,
-      "summary": "Pay off your debts by working part-time in the nightlife district of Smile Town! Buy items from your friend Apple Ginger's shop to get an advantage at your part-time job.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 399294,
-      "name": "Backrooms: The Twisted One",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobyyb.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobyyb.jpg",
-      "release_date": 1780099200,
-      "platforms": [
-        "PS5"
-      ],
-      "genres": [
-        "Indie"
-      ],
-      "themes": [
-        19
-      ],
-      "developer": "CraePlay",
-      "publisher": "GGmuks Inc.",
-      "score": null,
-      "summary": "Backrooms: The Twisted One is a tense horror escape experience set in the classic yellow liminal halls of the Backrooms. Explore 3 levels across Normal and Hard difficulties while haunted doll entities stalk your every move. They freeze when watched, but the moment you look away, they close in. Search the maze for coll",
-      "trailer": "sncV67P69Bg",
-      "follows": 0
-    },
     {
       "id": 372718,
       "name": "Where the Forest Ends",
@@ -635,29 +566,6 @@
       "score": null,
       "summary": "Cook what you kill in this cozy fantasy incremental. Slay monsters, turn them into delicious meals, and build your dungeon food business!",
       "trailer": "0LThddcqgZg",
-      "follows": 0
-    },
-    {
-      "id": 388467,
-      "name": "Hold Your King",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobtdt.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobtdt.jpg",
-      "release_date": 1780272000,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        1
-      ],
-      "developer": "Next Big Game Studio",
-      "publisher": "UGC90",
-      "score": null,
-      "summary": "In this physics-based co-op platformer, you and a friend must carry your short-tempered king through deadly medieval courses. Dodge traps, maintain balance, and work together to reach the throne room. One wrong step, and the king might crown you with his rage!",
-      "trailer": "zNHDy6d1UWs",
       "follows": 0
     },
     {
@@ -2945,6 +2853,29 @@
       "follows": 0
     },
     {
+      "id": 388467,
+      "name": "Hold Your King",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobtdt.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobtdt.jpg",
+      "release_date": 1781049600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [
+        1
+      ],
+      "developer": "Next Big Game Studio",
+      "publisher": "UGC90",
+      "score": null,
+      "summary": "In this physics-based co-op platformer, you and a friend must carry your short-tempered king through deadly medieval courses. Dodge traps, maintain balance, and work together to reach the throne room. One wrong step, and the king might crown you with his rage!",
+      "trailer": "zNHDy6d1UWs",
+      "follows": 0
+    },
+    {
       "id": 392036,
       "name": "Latitude of the Cult",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblvh.jpg",
@@ -3486,6 +3417,30 @@
       "follows": 0
     },
     {
+      "id": 403432,
+      "name": "Kooo to Jump!",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4sb.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4sb.jpg",
+      "release_date": 1781568000,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [
+        1,
+        27
+      ],
+      "developer": "Tzavis Studio",
+      "publisher": null,
+      "score": null,
+      "summary": "A hardcore, voice-controlled precision platformer where you crow to jump! Sustain a continuous 'KOOO' to scale a brutal, foddian-style map. Scale 60 camera zones, conquer a massive world, and lose your dignity in this unrelenting rage game. Includes controller support and Practice Mode.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
       "id": 346994,
       "name": "Glimvale: My Mini Overworld",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9wpp.jpg",
@@ -3695,7 +3650,7 @@
         1,
         17
       ],
-      "developer": "Clay Tech Works",
+      "developer": "Square Enix Creative Studio 5",
       "publisher": "Square Enix",
       "score": null,
       "summary": "The Adventures of Elliot: The Millennium Tales is an action RPG set in the world of Philabieldia - a beautiful but savage land dominated by warring beast tribes. Humanity’s last bastion is the Kingdom of Huther, protected by its tall walls and Princess Heuria’s powerful magic.\n\nWhen a mysterious set of ruins is discove",
@@ -4338,9 +4293,177 @@
       "summary": "A fast-paced rhythm game where every mistake costs a life. Hit the right keys in time with the music, survive escalating mutators, upgrade your skills, and push your run as far as possible.",
       "trailer": "29nDa_WffS4",
       "follows": 0
+    },
+    {
+      "id": 356562,
+      "name": "Kiyo: Bunny Tyranny",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa5r2.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coa5r2.jpg",
+      "release_date": 1782345600,
+      "platforms": [
+        "PC",
+        "Switch"
+      ],
+      "genres": [
+        "Platform",
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [
+        1
+      ],
+      "developer": "Pixel Rats",
+      "publisher": "CobraTekku Games",
+      "score": null,
+      "summary": "Control the body of Kiyo, a feline ex-predator trapped in a neon-lit, dystopian city dominated by smartphone-addicted bunnies. Discover their deepest secrets, and free everyone from their tyrannical grip in this stealthy platform adventure.",
+      "trailer": "kFEPWBAo8hg",
+      "follows": 0
+    },
+    {
+      "id": 374305,
+      "name": "Dragon Quest X: Jikuu no Mayoigo-tachi Online",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob3wf.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cob3wf.jpg",
+      "release_date": 1782345600,
+      "platforms": [
+        "PC",
+        "Switch"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Adventure"
+      ],
+      "themes": [
+        17,
+        38
+      ],
+      "developer": "Square Enix Creative Studio 4",
+      "publisher": "Square Enix",
+      "score": null,
+      "summary": "Dragon Quest X: Jikuu no Mayoigotachi Online is the seventh major expansion for Dragon Quest X, known as Version 8. It adds a new story, characters, and content as part of the ongoing Dragon Quest X experience, but requires prior access to earlier Dragon Quest X Online content (or the All-In-One version covering versio",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 378910,
+      "name": "Go Hell Go Gou: Tsukiotoshitego",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coawao.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coawao.jpg",
+      "release_date": 1782345600,
+      "platforms": [
+        "PC",
+        "Switch"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Visual Novel"
+      ],
+      "themes": [
+        1,
+        27
+      ],
+      "developer": "ENTERGRAM",
+      "publisher": "ENTERGRAM",
+      "score": null,
+      "summary": "An expanded version of goHELLgo with a new facility and corresponding characters, new events for the main heroines and 3 new story characters.",
+      "trailer": "WbXFrUjL-uY",
+      "follows": 0
+    },
+    {
+      "id": 386594,
+      "name": "Bobble and the Tri-Crystal",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobbwv.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobbwv.jpg",
+      "release_date": 1782345600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Shooter",
+        "Indie"
+      ],
+      "themes": [
+        1,
+        32
+      ],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "Swim, shoot, and save the ocean! Play as a detective fish in this fast-paced 2D retro shoot 'em up! Unlock multiple weapons, defeat enemy hordes, and capture bosses before it's too late!",
+      "trailer": "GuND4MIO238",
+      "follows": 0
     }
   ],
   "recent": [
+    {
+      "id": 399294,
+      "name": "Backrooms: The Twisted One",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobyyb.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobyyb.jpg",
+      "release_date": 1780099200,
+      "platforms": [
+        "PS5"
+      ],
+      "genres": [
+        "Indie"
+      ],
+      "themes": [
+        19
+      ],
+      "developer": "CraePlay",
+      "publisher": "GGmuks Inc.",
+      "score": null,
+      "summary": "Backrooms: The Twisted One is a tense horror escape experience set in the classic yellow liminal halls of the Backrooms. Explore 3 levels across Normal and Hard difficulties while haunted doll entities stalk your every move. They freeze when watched, but the moment you look away, they close in. Search the maze for coll",
+      "trailer": "sncV67P69Bg",
+      "follows": 0
+    },
+    {
+      "id": 397229,
+      "name": "Smile Town",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobvno.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobvno.jpg",
+      "release_date": 1780099200,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Indie"
+      ],
+      "themes": [
+        18
+      ],
+      "developer": "HAGUKI",
+      "publisher": "Hug&Kiss Games",
+      "score": null,
+      "summary": "Pay off your debts by working part-time in the nightlife district of Smile Town! Buy items from your friend Apple Ginger's shop to get an advantage at your part-time job.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 392269,
+      "name": "Project Microchip",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobm3f.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobm3f.jpg",
+      "release_date": 1780099200,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [
+        1,
+        19
+      ],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "A social deduction survival game set in a radiation-filled, abandoned forest. Survivors must complete tasks to stay alive, while the Infected hunt them down.",
+      "trailer": null,
+      "follows": 0
+    },
     {
       "id": 403151,
       "name": "Obsolete Friends",
@@ -4535,7 +4658,7 @@
       "publisher": null,
       "score": null,
       "summary": "Control, I'm Not Coming Back is a short and emotional narrative game about a lost astronaut searching for a reason to keep going forward while facing the emptiness of space. Inspired by the Hopecore aesthetic, it’s a story about positivism, friendship and our human connection with Voyager 1.",
-      "trailer": null,
+      "trailer": "XamRZCdsCkw",
       "follows": 0
     },
     {
@@ -4633,6 +4756,30 @@
       "score": null,
       "summary": "Your life has come to an end, when you find Frog God he seems impressed. Turns out most frog souls need a soul reaper to show them the way to the afterlife. Find out in this challenging puzzle platformer with a unique clock-stopping mechanic!",
       "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 399318,
+      "name": "Momo Don't Leave",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobz09.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobz09.jpg",
+      "release_date": 1780012800,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Adventure",
+        "Indie",
+        "Visual Novel"
+      ],
+      "themes": [
+        19
+      ],
+      "developer": "Vainsane",
+      "publisher": "Vainsane",
+      "score": null,
+      "summary": "Return to a town that never changed… and a friend who's supposed to be dead. A psychological horror visual novel about memory and the cost of refusing to move forward.",
+      "trailer": "snKIVrVnC8w",
       "follows": 0
     },
     {
@@ -5063,30 +5210,6 @@
       "follows": 0
     },
     {
-      "id": 368932,
-      "name": "Paradise Beyond the Nightmare",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coail7.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coail7.jpg",
-      "release_date": 1780012800,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Puzzle",
-        "Indie"
-      ],
-      "themes": [
-        1,
-        19
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "\"Paradise Beyond the Nightmare\" is a 2D exploration horror game where you explore and solve puzzles in a 2D space with depth. You can experience moving both sideways and forwards through eerie paintings.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
       "id": 354927,
       "name": "Solis",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa4lu.jpg",
@@ -5106,6 +5229,29 @@
       "score": null,
       "summary": "Solis is a hand-drawn adventure about technology and deception in a city at night.\nDuring a company trip you explore the city of Solis from dusk till dawn, talking with its inhabitants and meeting colleagues. This night you learn the painful truth about the company you work for. Will you remain loyal?\nIn the game you e",
       "trailer": "-3bLXgySyfQ",
+      "follows": 0
+    },
+    {
+      "id": 352748,
+      "name": "Reaper Actual",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coalcw.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coalcw.jpg",
+      "release_date": 1780012800,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Shooter"
+      ],
+      "themes": [
+        1,
+        38
+      ],
+      "developer": "Distinct Possibility Studios",
+      "publisher": "Distinct Possibility Studios",
+      "score": null,
+      "summary": "Reaper Actual is an open-world persistent shooter where hundreds of players engage in FPS combat against each other and 5 NPC factions on the massive war-torn island of Marova. Level your Reapers, maintain a home base, and complete missions to earn gear and reshape the world.",
+      "trailer": "j7q6mWEIt8o",
       "follows": 0
     },
     {
@@ -5346,6 +5492,95 @@
       "follows": 0
     },
     {
+      "id": 403457,
+      "name": "They Can't Hear You",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4tk.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4tk.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Puzzle",
+        "Simulator",
+        "Indie"
+      ],
+      "themes": [
+        19,
+        21
+      ],
+      "developer": "allsee",
+      "publisher": "allsee",
+      "score": null,
+      "summary": "This dying star may kill you.\n\nSomething went wrong and your capsule was shot into the void of space during a Supernova blast. Now, your only hope of survival are your drones. Can you triangulate a rescue signal through the surrounding debris before your oxygen runs out? It's the only chance you've got.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 403455,
+      "name": "Girlballs",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4tj.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4tj.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Platform",
+        "Indie"
+      ],
+      "themes": [],
+      "developer": "3denemy",
+      "publisher": "3denemy",
+      "score": null,
+      "summary": "",
+      "trailer": "xbFsM0Dn1uk",
+      "follows": 0
+    },
+    {
+      "id": 403453,
+      "name": "Pigeon's Untitled Screenplay",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4tf.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4tf.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [],
+      "developer": "Sam Eng",
+      "publisher": "Sam Eng",
+      "score": null,
+      "summary": "Pigeon is screwed! The studio is expecting the screenplay, but it's still not done. Find inspiration in the cafe and finish the screenplay before eternity ends.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 403449,
+      "name": "Rodent Rooms",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4t7.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4t7.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Platform",
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [],
+      "developer": "Figglewatts",
+      "publisher": "Figglewatts",
+      "score": null,
+      "summary": "Rodent Rooms is a game about memories. And cheese! You are a rodent: small enough to slip through tiny gaps, sharp-toothed and stubborn enough to chew through anything.\n\nExplore a series of giant dioramas—reconstructions of times past. Find pieces of cheese along the way to unlock special upgrades that aid your explora",
+      "trailer": "xhFeDvMTX8Y",
+      "follows": 0
+    },
+    {
       "id": 403377,
       "name": "FPBI Test Program",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4pv.jpg",
@@ -5404,7 +5639,7 @@
       "publisher": null,
       "score": null,
       "summary": "Head to the bar, get a drink, make some friends, have interesting conversations, meet someone special.\n\nExit at the door when you are ready to leave.\n\nAnnounced as part of the 5/28/2026 Shovel Direct.",
-      "trailer": "tUerDMUqrb0",
+      "trailer": null,
       "follows": 0
     },
     {
@@ -5428,6 +5663,91 @@
       "score": null,
       "summary": "A small cutesy game where you provide magical potions to a variety of strange characters.",
       "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 403301,
+      "name": "Console Archives: Geki-Oh ShienRyu",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4mb.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4mb.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PS5",
+        "Switch 2"
+      ],
+      "genres": [
+        "Shooter"
+      ],
+      "themes": [],
+      "developer": "Warashi",
+      "publisher": "HAMSTER Corporation",
+      "score": null,
+      "summary": "\"Geki-Oh ShienRyu\" was released by Warashi in 1999 for a 32-bit home console.\nIn this shooting game, you must take down waves of enemy forces and colossal war machines attacking with relentless fury.",
+      "trailer": "WCYWtBu12zo",
+      "follows": 0
+    },
+    {
+      "id": 403300,
+      "name": "Arcade Archives 2: Tatakae! Big Fighter",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4se.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4se.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PS5",
+        "Switch 2",
+        "Xbox Series X|S"
+      ],
+      "genres": [
+        "Shooter"
+      ],
+      "themes": [],
+      "developer": "Nichibutsu",
+      "publisher": "HAMSTER Corporation",
+      "score": null,
+      "summary": "\"Tatakae! Big Fighter\" is a shooter released by Nichibutsu in 1989.\nIn this game, you can switch between fighter jet and robot form during battle.\nThe key to clearing a stage is to strengthen your ship with power-up items that appear along the way and change its shape to suit the situation.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 403299,
+      "name": "Arcade Archives 2: Ace Driver",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4s9.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4s9.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PS5",
+        "Switch 2",
+        "Xbox Series X|S"
+      ],
+      "genres": [
+        "Racing"
+      ],
+      "themes": [],
+      "developer": "Namco Limited",
+      "publisher": "HAMSTER Corporation",
+      "score": null,
+      "summary": "\"Ace Driver\" is a racing game released by Namco Limited (current Bandai Namco Entertainment Inc.) in 1994.\n\nExperience the essence of racing with breathtaking race tracks and authentic handling.\nChoose a class based on your player level and charge through the game! Who is the true Ace Driver!?",
+      "trailer": "YPZUaYEVH-c",
+      "follows": 0
+    },
+    {
+      "id": 403298,
+      "name": "Arcade Archives: Ace Driver",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4s1.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4s1.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "Switch"
+      ],
+      "genres": [
+        "Racing"
+      ],
+      "themes": [],
+      "developer": "Namco Limited",
+      "publisher": "HAMSTER Corporation",
+      "score": null,
+      "summary": "\"Ace Driver\" is a racing game released by Namco Limited (current Bandai Namco Entertainment Inc.) in 1994.\n\nExperience the essence of racing with breathtaking race tracks and authentic handling.\nChoose a class based on your player level and charge through the game! Who is the true Ace Driver!?",
+      "trailer": "YPZUaYEVH-c",
       "follows": 0
     },
     {
@@ -5683,7 +6003,8 @@
       "release_date": 1779926400,
       "platforms": [
         "PC",
-        "Switch"
+        "Switch",
+        "Switch 2"
       ],
       "genres": [
         "Puzzle"
@@ -5691,8 +6012,8 @@
       "themes": [
         40
       ],
-      "developer": null,
-      "publisher": null,
+      "developer": "BeXide",
+      "publisher": "BeXide",
       "score": null,
       "summary": "3D Puzzle: Take It Easy!!! Touhou Project characters are here in their \"\"Yukkuri\"\" forms! Stack up the \"\"Yukkuri\"\" and create your very own \"\"Yukkuri Mountain\"\"!",
       "trailer": "Fznje1QiWQw",
@@ -5896,7 +6217,8 @@
       "platforms": [
         "PC",
         "PS5",
-        "Switch"
+        "Switch",
+        "Xbox Series X|S"
       ],
       "genres": [
         "Sport",
@@ -5904,8 +6226,8 @@
         "Arcade"
       ],
       "themes": [],
-      "developer": null,
-      "publisher": null,
+      "developer": "Purple Tree Studio",
+      "publisher": "Purple Play",
       "score": null,
       "summary": "Beat the Champions is a fast-paced arcade football game where legendary players clash in explosive matches powered by special abilities. No realism — just speed, skill, and pure competitive chaos.",
       "trailer": null,
@@ -6191,349 +6513,6 @@
       "score": null,
       "summary": "STARDUST: Wish of Witch is a single-player SRPG beautifully crafted in pixel art. Follow the secret of the wish-granting star and join the adventure of the girl “Star” and the mage “Yu”.",
       "trailer": "lP8qkw22iRg",
-      "follows": 0
-    },
-    {
-      "id": 383923,
-      "name": "Dread Fields",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4o7.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4o7.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        19
-      ],
-      "developer": "Podoba Interactive",
-      "publisher": "Podoba Interactive",
-      "score": null,
-      "summary": "You bought an isolated farm to start a new life. Your peaceful routine is shattered when the former owner's terrible secrets rise from beneath the ground. A slow-burn rural horror.",
-      "trailer": "i0vpg4XMt9c",
-      "follows": 0
-    },
-    {
-      "id": 383835,
-      "name": "Office Inspector",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob6kg.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cob6kg.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": "Ice Break INQ",
-      "publisher": "Ice Break INQ",
-      "score": null,
-      "summary": "Identify anomalies and dangers in a mysterious office complex and make the right decisions to escape using the elevator.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 383455,
-      "name": "The Big Hollow: 1982",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob6ke.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cob6ke.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Point-and-click",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        43
-      ],
-      "developer": "Krams Design",
-      "publisher": "Krams Design",
-      "score": null,
-      "summary": "A serial killer’s dumping ground is exposed. Find details in the evidence, interpret their behaviors, and prove your worth to the FBI’s new Behavioral Science Unit. A dark, atmospheric 2D animated murder mystery.",
-      "trailer": "Oj9BdSVIuew",
-      "follows": 0
-    },
-    {
-      "id": 379637,
-      "name": "What's the Password?",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coax1s.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coax1s.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Puzzle",
-        "Indie"
-      ],
-      "themes": [
-        43
-      ],
-      "developer": "TrampolineTales",
-      "publisher": "TrampolineTales",
-      "score": null,
-      "summary": "\"What's the Password?\" is a minimalistic puzzle game where you decode 4-digit passwords. Featuring over 100 puzzles!",
-      "trailer": "TY6PmXsFnvs",
-      "follows": 0
-    },
-    {
-      "id": 376660,
-      "name": "Heroes of Magic and Steel",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobxnv.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobxnv.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Strategy",
-        "Tactical",
-        "Adventure"
-      ],
-      "themes": [
-        17
-      ],
-      "developer": "Gaister Studios",
-      "publisher": "Nuntius Games",
-      "score": null,
-      "summary": "Build a team of 3 heroes, prepare your deck and dominate tactical battles on a hex grid. Every run demands a different strategy and each card played matters, only going back to your deck on the next run.",
-      "trailer": "-tPB7XuIPyY",
-      "follows": 0
-    },
-    {
-      "id": 374642,
-      "name": "Tame-a-goat-chi",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coapxv.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coapxv.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": "Rio Master",
-      "publisher": "Rio Master",
-      "score": null,
-      "summary": "Run your own adorable goat pasture in this half-screen idle game! Tame, feed and care for quirky goats while growing your farm – all while you work or browse the web!",
-      "trailer": "MWa2-bHOnZg",
-      "follows": 0
-    },
-    {
-      "id": 374448,
-      "name": "E9uations",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coapql.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coapql.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Puzzle",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "You are the equal sign(=). Rearrange the numbers and operators to form equation and solve the puzzle.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 374243,
-      "name": "Belts of Iron",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc2xq.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc2xq.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Strategy",
-        "Indie"
-      ],
-      "themes": [
-        33,
-        38
-      ],
-      "developer": "Builderment LLC",
-      "publisher": null,
-      "score": null,
-      "summary": "Belts of Iron is an open world, third-person, factory building game. As a solo developer your support and feedback is crucial to the continued development of the game.\nExplore vast procedurally generated worlds where every playthrough offers something new. Venture off in search of rich resource deposits, uncover unique",
-      "trailer": "jg2jKkd0SUE",
-      "follows": 0
-    },
-    {
-      "id": 372734,
-      "name": "UrbexCam",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coanyn.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coanyn.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        1,
-        19,
-        22,
-        23
-      ],
-      "developer": "Infinity Glyph Games",
-      "publisher": "Infinity Glyph Games",
-      "score": null,
-      "summary": "UrbexCAM is a first-person horror exploration game where you and your friends break into eerie, abandoned locations whether it’s a crumbling house, a shut-down mall, or a forgotten factory to dig up the dark secrets behind why they were left behind. Each place has its own disturbing story, and it’s up to you to piece t",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 372497,
-      "name": "Airport Baggage Simulator",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coasrx.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coasrx.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": "Three River Games",
-      "publisher": "Three River Games",
-      "score": null,
-      "summary": "Inspect and sort baggage at the airport! Check suitcases for illegal contents, weight, and destination. Build your own fully automated baggage handling and optimize your terminal's efficiency for maximum profit!",
-      "trailer": "GhoxTNsvDsI",
-      "follows": 0
-    },
-    {
-      "id": 372144,
-      "name": "Crashout Crew",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coan16.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coan16.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC",
-        "Xbox Series X|S"
-      ],
-      "genres": [
-        "Racing",
-        "Indie",
-        "Arcade"
-      ],
-      "themes": [],
-      "developer": "Aggro Crab Games",
-      "publisher": "Aggro Crab Games",
-      "score": null,
-      "summary": "Time to clock in at DE NILE SHIPPING, the worlds most efficient warehouse! Work together in online co-op with up to 4 players to fulfill orders of increasingly chaotic, physics-based boxes. Time is money, and safety is no concern just try not to crash out!",
-      "trailer": "g5zAxMMDE2U",
-      "follows": 0
-    },
-    {
-      "id": 372020,
-      "name": "Sinister Remains",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coamw3.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coamw3.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        19
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "In the shadow of a curse that has endured for decades, explore a town haunted by twisted truths and terrifying events. As you search for the remnants of the past, you’ll uncover the darkness around you and within yourself.",
-      "trailer": "NKIwiBbhve4",
-      "follows": 0
-    },
-    {
-      "id": 368791,
-      "name": "Bounty Brawl: Most Wanted",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaxnp.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coaxnp.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        1
-      ],
-      "developer": null,
-      "publisher": "Infini Fun",
-      "score": null,
-      "summary": "Welcome to Hunter Haven! Bounty Brawl is a top-down action roguelite shooter for 1-4 players. Here, the hunt is fierce, and betrayal is inevitable. Will you form a fragile alliance with other hunters under the galaxy's most notorious bounties, or go it alone? Who will emerge as the ultimate victor?",
-      "trailer": "tb-hG2Bjlag",
-      "follows": 0
-    },
-    {
-      "id": 357491,
-      "name": "Kioku: Last Summer",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa7i2.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coa7i2.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC",
-        "Switch"
-      ],
-      "genres": [
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": "Lugn Games",
-      "publisher": null,
-      "score": null,
-      "summary": "Kioku: Last Summer is a cozy, story-driven adventure where you play as Asti, a young girl spending her first summer on the mysterious island of Kioku. Set in a hand-crafted world blending Scandinavian and Japanese influences, players explore, build friendships, play minigames, uncover secrets, and relive the magic of e",
-      "trailer": "FjXQFMFcK0M",
-      "follows": 0
-    },
-    {
-      "id": 352498,
-      "name": "100 Cats Lost in France Find & Color",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa2qh.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coa2qh.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Indie"
-      ],
-      "themes": [],
-      "developer": "Two Cats Games",
-      "publisher": "Two Cats Games",
-      "score": null,
-      "summary": "Grab your crayons and hunt for 100 hidden cats across a beautifully hand-drawn map. Play solo or invite a friend to join online, then bring each scene to life with guided color-by-numbers or your own palette — all in a relaxing, soothing atmosphere.",
-      "trailer": null,
       "follows": 0
     }
   ]
