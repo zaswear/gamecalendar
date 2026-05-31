@@ -1,74 +1,6 @@
 {
-  "updated_at": "2026-05-30T09:22:41+00:00",
+  "updated_at": "2026-05-31T09:48:48+00:00",
   "upcoming": [
-    {
-      "id": 372718,
-      "name": "Where the Forest Ends",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coanq0.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coanq0.jpg",
-      "release_date": 1780185600,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Adventure"
-      ],
-      "themes": [
-        1,
-        19
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "Where the forest end is a story-driven, top-down horror shooter set in a zombie-infested post-apocalypse. Visceral, grounded, and realistic. A fresh take on a classic genre.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 385413,
-      "name": "Reincarnated as a Dark Lord Before Taking Over the World with Power 999999999",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba5p.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coba5p.jpg",
-      "release_date": 1780185600,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "An idle RPG where you play as a dark lord with the power to reincarnate. Choose different paths with each life to grow progressively stronger, eventually gaining enough power to conquer the world.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 392099,
-      "name": "Chicken TD: Defenders of the Coop",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblxv.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coblxv.jpg",
-      "release_date": 1780185600,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Strategy",
-        "Indie"
-      ],
-      "themes": [
-        1
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "Chicken TD is a unique tower defense game where you strategically summon and upgrade creature towers to defend your coop from waves of enemies, while also engaging in Souls-like melee combat with a chosen weapon to directly hold the line and collect meta-progression currency.",
-      "trailer": null,
-      "follows": 0
-    },
     {
       "id": 202138,
       "name": "Deer & Boy",
@@ -1313,6 +1245,30 @@
       "follows": 0
     },
     {
+      "id": 403545,
+      "name": "The Labyrinth on Burrow Hill",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4xm.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4xm.jpg",
+      "release_date": 1780272000,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Puzzle",
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [
+        43
+      ],
+      "developer": "Jonny Haynes",
+      "publisher": "Jonny Haynes",
+      "score": null,
+      "summary": "Unravel a thread of riddles and mystery as you progress your way through the atmospheric halls of a dazzlingly large, long-deserted labyrinth. Explore the vistas of spectacular rooms and the hidden challenges within. Do you have what it takes to find what lies at the labyrinth's centre?",
+      "trailer": "lUc5sarOVu0",
+      "follows": 0
+    },
+    {
       "id": 317152,
       "name": "Ourlands",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9rxk.jpg",
@@ -1477,6 +1433,29 @@
       "follows": 0
     },
     {
+      "id": 403497,
+      "name": "Fortune Mill",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc52p.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc52p.jpg",
+      "release_date": 1780358400,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Simulator",
+        "Indie"
+      ],
+      "themes": [
+        17
+      ],
+      "developer": "LavaFlame2",
+      "publisher": null,
+      "score": null,
+      "summary": "An incremental game where you must make $1,000,000 in each room to advance. Throw darts, play scratch-off tickets, unlock automation, and choose upgrades carefully as each room affects all the others. Can you escape the Fortune Mill?",
+      "trailer": "oQkVqTZ2FhY",
+      "follows": 0
+    },
+    {
       "id": 369770,
       "name": "Blood West: Scavengers",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc0us.jpg",
@@ -1575,32 +1554,6 @@
       "score": null,
       "summary": "Version 1.1 of Neverness to Everness, which includes:\n• New Characters: Lacrimosa and Chaos\n• New Main Story Chapter\n• New areas: Sunward Island and Corridor of Echoes\n• New events and game modes\n• ...and more!",
       "trailer": "uNRA_BbIr_Y",
-      "follows": 0
-    },
-    {
-      "id": 203520,
-      "name": "Calx",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblm1.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coblm1.jpg",
-      "release_date": 1780531200,
-      "platforms": [
-        "PC",
-        "PS5",
-        "Switch",
-        "Xbox Series X|S"
-      ],
-      "genres": [
-        "Adventure"
-      ],
-      "themes": [
-        1,
-        18
-      ],
-      "developer": "True Colors",
-      "publisher": "Dear Villagers",
-      "score": null,
-      "summary": "Calx is an atmospheric 3D action adventure inspired by visionary sci-fi art. Explore planet Syro - vast landscapes filled with crystal structures and ancient technology. Find out what the WARP did to the Quoths civilization. The environment guides you, revealing secrets through exploration.",
-      "trailer": "93X-yZEIcqI",
       "follows": 0
     },
     {
@@ -2181,6 +2134,28 @@
       "follows": 0
     },
     {
+      "id": 391717,
+      "name": "Witch's Apocalyptic Journey",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobm4a.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobm4a.jpg",
+      "release_date": 1780617600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Strategy",
+        "Turn-based strategy (TBS)"
+      ],
+      "themes": [],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "Abyss decayed, witches awaken. As their guide, you will weave their destinies. Craft unique cards, schedule their days, shape endless possibilities through deckbuilding. Each choice will lead to different Ending...",
+      "trailer": "Nzvf7Uhp_r0",
+      "follows": 0
+    },
+    {
       "id": 392614,
       "name": "Asphalt Racing Bundle 3 in 1",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobmqh.jpg",
@@ -2449,7 +2424,7 @@
         33
       ],
       "developer": "Cyberwave",
-      "publisher": "Metaroot",
+      "publisher": "rokaplay",
       "score": null,
       "summary": "Solarpunk is a survival game in a technically advanced world of floating islands. Alone or together with your friends, you can construct buildings, grow food, craft gadgets and explore distant islands with your own airship.\n\nUse sunlight, wind and water to create an energy system and automate your processes like gather",
       "trailer": "7Zhfg938Bt8",
@@ -4202,6 +4177,28 @@
       "follows": 0
     },
     {
+      "id": 403548,
+      "name": "Sovereign's End",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4xx.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc4xx.jpg",
+      "release_date": 1782172800,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Indie"
+      ],
+      "themes": [
+        1
+      ],
+      "developer": "NQR Games",
+      "publisher": "NQR Games",
+      "score": null,
+      "summary": "Feel invincible. Until you're not. A 3D space survivor-like with deep build-crafting, auto-firing abilities, and one Sovereign at the end of every run. Few will reach it.",
+      "trailer": "b5QRjpOBFCI",
+      "follows": 0
+    },
+    {
       "id": 372395,
       "name": "No Way Back: Dark Horizon",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coande.jpg",
@@ -4292,6 +4289,30 @@
       "score": null,
       "summary": "A fast-paced rhythm game where every mistake costs a life. Hit the right keys in time with the music, survive escalating mutators, upgrade your skills, and push your run as far as possible.",
       "trailer": "29nDa_WffS4",
+      "follows": 0
+    },
+    {
+      "id": 403480,
+      "name": "OK Boomer",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc52t.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc52t.jpg",
+      "release_date": 1782259200,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Indie"
+      ],
+      "themes": [
+        1,
+        21,
+        27
+      ],
+      "developer": "Pugsy Studios",
+      "publisher": null,
+      "score": null,
+      "summary": "A 4-player cooperative survival horror where you’ll explore the terrifying depths of the internet alongside your team of analog tech enthusiasts. Use old-school technology to purge glitches, preserve your digital sanity, and survive the strange monsters lurking in the deep web.",
+      "trailer": "jQkQPZEt_fA",
       "follows": 0
     },
     {
@@ -4396,6 +4417,100 @@
   ],
   "recent": [
     {
+      "id": 396990,
+      "name": "Nerds Revenge",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc0d6.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc0d6.jpg",
+      "release_date": 1780185600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Fighting",
+        "Quiz/Trivia",
+        "Indie"
+      ],
+      "themes": [
+        1,
+        27,
+        40
+      ],
+      "developer": "Adrenaline Games",
+      "publisher": "Adrenaline Games",
+      "score": null,
+      "summary": "You Got A Problem?! is a chaotic multiplayer party game where players fight each other using physics-based combat and random objects.\n\nBetween rounds, players must answer quiz questions to gain advantages, creating a unique mix of skill, chaos, and knowledge.\n\nThe game also features Twitch integration, viewers can answ",
+      "trailer": "rCEGXn8JhL8",
+      "follows": 0
+    },
+    {
+      "id": 392099,
+      "name": "Chicken TD: Defenders of the Coop",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coblxv.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coblxv.jpg",
+      "release_date": 1780185600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Strategy",
+        "Indie"
+      ],
+      "themes": [
+        1
+      ],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "Chicken TD is a unique tower defense game where you strategically summon and upgrade creature towers to defend your coop from waves of enemies, while also engaging in Souls-like melee combat with a chosen weapon to directly hold the line and collect meta-progression currency.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 385413,
+      "name": "Reincarnated as a Dark Lord Before Taking Over the World with Power 999999999",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba5p.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coba5p.jpg",
+      "release_date": 1780185600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Simulator",
+        "Adventure",
+        "Indie"
+      ],
+      "themes": [],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "An idle RPG where you play as a dark lord with the power to reincarnate. Choose different paths with each life to grow progressively stronger, eventually gaining enough power to conquer the world.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 372718,
+      "name": "Where the Forest Ends",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coanq0.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coanq0.jpg",
+      "release_date": 1780185600,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Adventure"
+      ],
+      "themes": [
+        1,
+        19
+      ],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "Where the forest end is a story-driven, top-down horror shooter set in a zombie-infested post-apocalypse. Visceral, grounded, and realistic. A fresh take on a classic genre.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
       "id": 399294,
       "name": "Backrooms: The Twisted One",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobyyb.jpg",
@@ -4461,6 +4576,30 @@
       "publisher": null,
       "score": null,
       "summary": "A social deduction survival game set in a radiation-filled, abandoned forest. Survivors must complete tasks to stay alive, while the Infected hunt them down.",
+      "trailer": null,
+      "follows": 0
+    },
+    {
+      "id": 390139,
+      "name": "The Legend of You",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobjh1.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobjh1.jpg",
+      "release_date": 1780099200,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Strategy",
+        "Turn-based strategy (TBS)",
+        "Tactical"
+      ],
+      "themes": [
+        17
+      ],
+      "developer": "One Car Games",
+      "publisher": "One Car Games",
+      "score": null,
+      "summary": "Shape a fantasy realm with your words. Choose your hero’s tale, recruit, train, and equip allies, and battle through turn-based encounters of your own design. Each victory writes your legend, each choice brings you closer to the ultimate treasure.",
       "trailer": null,
       "follows": 0
     },
@@ -5492,6 +5631,30 @@
       "follows": 0
     },
     {
+      "id": 403519,
+      "name": "Beavertale",
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc52u.jpg",
+      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/coc52u.jpg",
+      "release_date": 1779926400,
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Platform",
+        "Puzzle",
+        "Strategy"
+      ],
+      "themes": [
+        1
+      ],
+      "developer": null,
+      "publisher": null,
+      "score": null,
+      "summary": "Help Gus, a brave beaver fighting to reclaim his forest from an evil corp. Build useful constructs, chop trees, destroy machines, and execute precise movements to overcome obstacles in this puzzle-platforming adventure. And remember, managing your resources is almost as important as using them.",
+      "trailer": "QIKYV83A9i0",
+      "follows": 0
+    },
+    {
       "id": 403457,
       "name": "They Can't Hear You",
       "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4tk.jpg",
@@ -6349,170 +6512,6 @@
       "score": null,
       "summary": "Find your way out of Velendar Castle. Discover why everything was taken from you. In this fantasy Escape room, you will have to solve puzzles to escape the wrath of the king… and find out what he wants from you.",
       "trailer": "qBNwmSDJ6Z8",
-      "follows": 0
-    },
-    {
-      "id": 390799,
-      "name": "Dung Battles",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobk92.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobk92.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Puzzle",
-        "Role-playing (RPG)",
-        "Indie"
-      ],
-      "themes": [
-        1
-      ],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "An action puzzle game where you play as a dung beetle, battling against your beetle peers to create the biggest dung ball. Battle online to test your ball rolling skills, strategically roll up items to win in challenge mode, or follow a young beetle's journey home in story mode.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 390313,
-      "name": "Mushi",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobjox.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobjox.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Simulator",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "Welcome to Mushi! The next-gen Auto-RPG set in a rich fantasy world. This is a feature-packed incremental idle game, meaning that it mostly plays on its own. Your hero will automatically defeat enemies and level up on your screen while you do other things. Begin your rise from level 1 today!",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 390127,
-      "name": "Smol Toad",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobjfj.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobjfj.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator",
-        "Indie"
-      ],
-      "themes": [],
-      "developer": null,
-      "publisher": null,
-      "score": null,
-      "summary": "A tiny toad with a big personality lives on your desktop while you work or play. Interact with him, take care of his happiness, avoid overwhelming him, and collect points to unlock hats and unique styles for your little amphibian companion.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 389513,
-      "name": "Gunsmith Simulator: Heavy Metal DLC",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobime.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobime.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Simulator"
-      ],
-      "themes": [
-        1
-      ],
-      "developer": "GameHunters",
-      "publisher": "PlayWay S.A.",
-      "score": null,
-      "summary": "Heavy Metal DLC is a tribute to weapons that don’t do subtle — they just roar. This add-on brings four machine guns to Gunsmith Simulator: MG3, M60, PKP Pecheneg, and M249.",
-      "trailer": null,
-      "follows": 0
-    },
-    {
-      "id": 387541,
-      "name": "Utawarerumono: Past and Present Rediscovered",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobdpj.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobdpj.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC",
-        "PS5",
-        "Switch 2"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Strategy",
-        "Adventure"
-      ],
-      "themes": [
-        17
-      ],
-      "developer": "Aquaplus",
-      "publisher": "Aquaplus",
-      "score": null,
-      "summary": "The Utawarerumono legend reaches a new climax in this sprawling JRPG! As a shadow falls over Yamato once more, Oshtor and friends set out on a fresh adventure—and somewhere, amid white mists, a long slumber approaches its end.",
-      "trailer": "IKLmHtFjTwY",
-      "follows": 0
-    },
-    {
-      "id": 386835,
-      "name": "Heavy Metal Death Can",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobck5.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobck5.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Adventure",
-        "Indie"
-      ],
-      "themes": [
-        1,
-        19,
-        21
-      ],
-      "developer": "Krufs Productions",
-      "publisher": null,
-      "score": null,
-      "summary": "Heavy Metal Death Can is a Retro-Inspired Survival-Horror game set on a submarine in an alternate late-70s Swedish setting. Trapped beneath the ocean, you must fight against the terrifying Sludge which has turned your crew into Zombies. Look for survivors and uncover the truth behind the madness.",
-      "trailer": "8zvmV8jRCLc",
-      "follows": 0
-    },
-    {
-      "id": 386172,
-      "name": "Stardust: Wish of Witch",
-      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobba2.jpg",
-      "cover_sm": "https://images.igdb.com/igdb/image/upload/t_cover_small/cobba2.jpg",
-      "release_date": 1779926400,
-      "platforms": [
-        "PC"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Strategy",
-        "Turn-based strategy (TBS)"
-      ],
-      "themes": [
-        17
-      ],
-      "developer": "Kniv Studio",
-      "publisher": "Kniv Studio",
-      "score": null,
-      "summary": "STARDUST: Wish of Witch is a single-player SRPG beautifully crafted in pixel art. Follow the secret of the wish-granting star and join the adventure of the girl “Star” and the mage “Yu”.",
-      "trailer": "lP8qkw22iRg",
       "follows": 0
     }
   ]
